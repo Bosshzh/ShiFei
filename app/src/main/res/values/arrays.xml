@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--作物类型-->
+    <string-array name="zuowu">
+        <item>小麦</item>
+        <item>玉米</item>
+        <item>水稻</item>
+        <item>豆类</item>
+        <item>薯类</item>
+    </string-array>
+    <!--土地类型-->
+    <string-array name="tudi">
+        <item>水田</item>
+        <item>旱地</item>
+    </string-array>
+    <!--肥料种类-->
+    <string-array name="manure">
+        <item>不施肥</item>
+        <item>无机肥料</item>
+        <item>有机肥料</item>
+        <item>有机无机肥料</item>
+    </string-array>
+    <!--无极肥料-->
+    <string-array name="wujifeiliao">
+        <item>氮肥含量</item>
+        <item>磷肥含量</item>
+        <item>钾肥含量</item>
+        <item>其它元素含量</item>
+    </string-array>
+    <string-array name="cishu">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <!--浇水次数-->
+    <string-array name="watercishu">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

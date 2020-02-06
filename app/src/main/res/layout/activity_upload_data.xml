@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lanling.activity.UploadDataActivity">
+
+    <com.lanling.view.TitlebarView
+        android:id="@+id/upload_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/titlebar"
+        app:centerTitle="@string/upload_center_title"
+        app:centerTextColor="#FFF"
+        app:leftDrawble="@mipmap/fanhui"
+        app:leftTextColor="#FFF"
+        app:leftText="@string/back"
+        />
+<ScrollView
+    android:layout_below="@+id/upload_titlebarview_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/list_in_item"
+        android:background="@color/grey2"
+        >
+
+        <!--地理信息-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="地理信息"
+                android:padding="@dimen/padding_title"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/upload_address_relativelayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+                <LinearLayout
+                    android:id="@+id/upload_address_linearlayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false">
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:text="@string/unknowlocation"
+                        style="@style/upload_address_textview_style"
+                        android:background="@drawable/bottom_border_background"
+                    />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_address_linearlayout2"
+                    android:layout_below="@id/upload_address_linearlayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false">
+
+                    <TextView
+                        android:id="@+id/latitude_longtitude"
+                        android:layout_below="@+id/tv_address"
+                        android:text="纬度:，经度:"
+                        style="@style/upload_address_textview_style"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upload_feiliao1_linearlayoutlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="耕地"
+                android:textSize="15dp"
+                android:padding="@dimen/padding_title"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/upload_address_relativelayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:id="@+id/upload_gengdi_linearlayout1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_border_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_weight="1"
+                        android:text="种植作物"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/upload_cropsort_spinner"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:entries="@array/zuowu"
+                        android:layout_height="@dimen/per_select">
+
+                    </Spinner>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_gengdi_linearlayout2"
+                    android:layout_below="@+id/upload_gengdi_linearlayout1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_border_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_weight="1"
+                        android:text="耕地类型"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"/>
+
+                    <Spinner
+                        android:id="@+id/upload_landsort_spinner"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:entries="@array/tudi"
+                        android:layout_height="@dimen/per_select">
+
+                    </Spinner>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_chanliang_linearlayout"
+                    android:layout_below="@id/upload_gengdi_linearlayout2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="liangshichanliang">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_weight="3"
+                        android:text="粮食亩产量"
+                        android:onClick="liangshichanliang"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"/>
+
+                    <TextView
+                        android:id="@+id/upload_chanliang_textview"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:onClick="liangshichanliang"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_width="0dp"
+                        android:text="公斤/亩"
+                        android:textColor="@color/grey3"
+                        android:onClick="liangshichanliang"
+                        android:gravity="center_vertical"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="施肥/浇水"
+                android:textSize="15dp"
+                android:padding="@dimen/padding_title"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/upload_address_relativelayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:id="@+id/upload_shifei_linearlayout1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_border_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_weight="1"
+                        android:text="肥料种类"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/upload_manuresort_spinner"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:entries="@array/manure"
+                        >
+
+                    </Spinner>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_manuresort_linearlayout"
+                    android:layout_below="@id/upload_shifei_linearlayout1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/upload_shifei_linearlayout2"
+                    android:layout_below="@+id/upload_manuresort_linearlayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_border_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_weight="1"
+                        android:text="作物施肥次数"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp" />
+
+                    <Spinner
+                        android:id="@+id/upload_manurenumber_spinner"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:entries="@array/cishu"
+                        >
+
+                    </Spinner>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_shifeicishu_linearlayout"
+                    android:layout_below="@+id/upload_shifei_linearlayout2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_shifei_linearlayout3"
+                    android:layout_below="@+id/upload_shifeicishu_linearlayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_border_background">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:layout_weight="1"
+                        android:text="浇水次数"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp" />
+
+                    <Spinner
+                        android:id="@+id/upload_waternumber_spinner"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select"
+                        android:entries="@array/cishu"
+                        >
+
+                    </Spinner>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upload_waternumber_linearlayout"
+                    android:layout_below="@+id/upload_shifei_linearlayout3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="其它"
+            android:textSize="15dp"
+            android:padding="@dimen/padding_title"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/upload_feiliao2_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/white">
+
+            <CheckBox
+                android:id="@+id/upload_spray_checkbox"
+                android:layout_weight="1"
+                android:text="是否打药"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/per_select" />
+
+            <CheckBox
+                android:id="@+id/upload_weed_checkbox"
+                android:layout_weight="1"
+                android:text="是否除草"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/per_select" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="土地景观图（2张）"
+                android:textSize="15dp"
+                android:padding="@dimen/padding_title"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="300px">
+
+                <LinearLayout
+                    android:id="@+id/upload_landphoto_linearlayout"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"></LinearLayout>
+
+                <ImageView
+                    android:id="@+id/upload_add_landphoto"
+                    android:src="@mipmap/tianjiatupian"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="现场访谈图（1张）"
+                android:textSize="15dp"
+                android:padding="@dimen/padding_title"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="300px">
+
+                <LinearLayout
+                    android:id="@+id/upload_interviewphoto_linearlayout"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"></LinearLayout>
+
+                <ImageView
+                    android:id="@+id/upload_add_interviewphoto"
+                    android:src="@mipmap/tianjiatupian"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/upload_save_button"
+                android:text="先存本地"
+                android:onClick="uploadSaveButton"
+                android:background="@color/green1"
+                android:drawableTop="@mipmap/xiazai"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/upload_submit_button"
+                android:text="上传数据"
+                android:onClick="uploadSubmitButton"
+                android:background="@color/green1"
+                android:drawableTop="@mipmap/shangchuan"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

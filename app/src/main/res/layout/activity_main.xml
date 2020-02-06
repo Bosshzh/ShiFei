@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--显示内容-->
+    <!--FrameLayout所有部件都会往左上角加，覆盖-->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_radio_group"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false">
+    </FrameLayout>
+    <!--主页面下面导航按钮-->
+    <RadioGroup
+        android:id="@+id/main_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RadioButton
+            android:id="@+id/main_jingcaishunjian"
+            style="@style/tab_style"
+            android:layout_weight="1"
+            android:textSize="13dp"
+            android:drawableTop="@drawable/fragment1"
+            android:text="@string/paihang_radiobutton"/>
+        <RadioButton
+            android:id="@+id/main_fuwuchanping"
+            style="@style/tab_style"
+            android:checked="true"
+            android:drawableTop="@drawable/fragment2"
+            android:layout_weight="1"
+            android:textSize="13dp"
+            android:text="@string/zhuyao_radiobutton"
+            />
+
+        <RadioButton
+            android:id="@+id/main_wode"
+            style="@style/tab_style"
+            android:drawableTop="@drawable/fragment3"
+            android:layout_weight="1"
+            android:textSize="13dp"
+            android:text="@string/wodexinxi_radiobutton"
+            />
+    </RadioGroup>
+
+</RelativeLayout>

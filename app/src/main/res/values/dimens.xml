@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_8">10dp</dimen>
+
+    <!--上传数据活动-->
+    <dimen name="lay_height">35dp</dimen>
+    <dimen name="lay_height2">70dp</dimen>
+    <dimen name="font_size">16sp</dimen>
+    <dimen name="margin_left">10dp</dimen>
+    <dimen name="per_select">45dp</dimen>
+    <dimen name="padding_title">15dp</dimen>
+
+
+</resources>

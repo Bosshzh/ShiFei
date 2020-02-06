@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/number_picker_background"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
+    >
+    <com.lanling.util.MNumberPicker
+            android:id="@+id/numberPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/affirm"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+
+</LinearLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:orientation="vertical"
+    android:background="@color/grey2">
+
+    <ImageView
+        android:id="@+id/wode_touxiang"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/app_icon"
+        android:layout_above="@+id/register_textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/register_textview"
+        android:layout_above="@+id/register_relativelayout"
+        android:layout_width="wrap_content"
+        android:textSize="30dp"
+        android:text="@string/welcome_register"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/register_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <!--邮箱账号-->
+        <LinearLayout
+            android:id="@+id/register_linearlayout1"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:text="@string/email"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/register_username"
+                android:layout_weight="7"
+                android:layout_width="0dp"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="13位以内英文字母/数字"
+                android:maxLength="13"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/register_random"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:onClick="Register_Suiji"
+                android:src="@mipmap/shaizi"/>
+
+        </LinearLayout>
+
+        <!--密码-->
+        <LinearLayout
+            android:layout_below="@+id/register_linearlayout1"
+            android:id="@+id/register_linearlayout3"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:text="@string/password"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/register_password"
+                android:layout_weight="7"
+                android:layout_width="0dp"
+                android:hint="13位以内英文字母/数字"
+                android:inputType="textPassword"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:maxLength="13"
+                android:layout_height="wrap_content"/>
+
+            <!--密码框是否显示出来-->
+            <CheckBox
+                android:id="@+id/register_isview"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:button="@mipmap/yincang" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_linearlayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/register_linearlayout3"
+            android:gravity="center"
+            >
+
+            <Button
+                android:id="@+id/register_register_button"
+                android:text="@string/register_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/validate_code_normal_bg"
+                android:layout_marginRight="10dp"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/reigster_back"
+        android:src="@mipmap/fanhui"
+        android:layout_width="wrap_content"
+        android:onClick="Register_Back_Button"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

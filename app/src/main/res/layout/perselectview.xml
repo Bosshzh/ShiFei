@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/perselect_relativelayout"
+    android:orientation="horizontal"
+    style="@style/perselect_relativelayout"
+    android:gravity="center_vertical"
+    android:background="@drawable/perselectview_background"
+    >
+
+        <ImageView
+            android:id="@+id/perselect_imageview"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="4dp"
+            android:gravity="center_vertical"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/perselect_textview"
+            android:layout_alignRight="@+id/perselect_imageview"
+            android:layout_weight="6"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageButton
+            android:id="@+id/perselect_imagebutton"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent"
+            style="@style/image_button_in_list"
+            />
+
+</LinearLayout>

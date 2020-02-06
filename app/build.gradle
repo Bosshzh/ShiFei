@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+android {
+    signingConfigs {
+        app {
+            storeFile file('D:\\胡振华\\项目\\debug版\\shifei.jks')
+            storePassword 'wyyalx513123.,/'
+            keyAlias = 'key0'
+            keyPassword 'wyyalx513123.,/'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.lanling.activity"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        pickFirst 'META-INF/*' // picks the JavaMail license file
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.app
+        }
+        release {
+            signingConfig signingConfigs.app
+        }
+    }
+
+}
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.contrarywind:Android-PickerView:4.1.6'
+    implementation 'com.google.code.gson:gson:2.2.+'
+    implementation 'org.litepal.android:core:2.0.0'
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation 'com.github.codbking:PickTime:v1.0.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation files('libs/mysql-connector-java-5.1.20.jar')
+    implementation 'org.litepal.android:core:1.6.1'
+    //JAVA-MAIL
+    implementation 'com.sun.mail:android-mail:1.6.0'
+    implementation 'com.sun.mail:android-activation:1.6.0'
+    configurations { all*.exclude group: 'javax.activation', module: 'activation' }
+    implementation files('libs/open_sdk_r53890096d0e731f134f448c1286e48c2043b484b_lite.jar')
+}

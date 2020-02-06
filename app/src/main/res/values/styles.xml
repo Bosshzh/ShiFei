@@ -1,0 +1,116 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+    <!--首页导航栏的图标,居中，距上内边距，对其方式，单行显示-->
+    <style name="tab_style">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="perselect_relativelayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:radius">20dp</item>
+        <item name="android:layout_marginTop">1px</item>
+    </style>
+    <style name="image_button_in_list">
+        <item name="android:background">@drawable/foreground</item>
+        <item name="android:src">@mipmap/go</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:scaleX">0.5</item>
+        <item name="android:scaleY">0.5</item>
+    </style>
+    <style name="wode_background1">
+<!--        <item name="android:padding">5dp</item>-->
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <!--上传数据活动-->
+    <style name="list_in_item">
+        <item name="android:background">@drawable/foreground</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="text_view_in_list">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginLeft">@dimen/margin_left</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="upload_address_style_in_list">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size</item>
+        <item name="android:layout_marginRight">@dimen/margin_left</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="upload_text_in_list">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginRight">@dimen/margin_left</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="BottomDialog.Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/number_picker_in</item>
+        <item name="android:windowExitAnimation">@anim/number_picker_out</item>
+    </style>
+    <!--上传数据页面地理信息TextView部分-->
+    <style name="upload_address_textview_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/per_select</item>
+        <item name="android:textColor">@color/grey3</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--Activity进场。出场动画-->
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <!--用于设置打开新的Activity并进入新的Activity展示的动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <!--用于设置打开新的Activity并销毁之前的Activity展示的动画-->
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <!--用于设置关闭当前Activity进入上一个Activity展示的动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <!--用于设置关闭当前Activity时展示的动画-->
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+
+</resources>

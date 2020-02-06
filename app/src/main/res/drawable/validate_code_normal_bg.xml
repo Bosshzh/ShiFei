@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--发送短信验证码按钮未按下-->
+    <solid android:color="#76EE00" /> <!--填充色 透明-->
+    <corners android:radius="6dp" />  <!-- 圆角 -->
+</shape>

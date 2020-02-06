@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/manuresort_youji_linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/lay_height2"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_border_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/manuresort_youji_dongwufenbian"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="动物粪便"/>
+        <CheckBox
+            android:id="@+id/manuresort_youji_nongyefeiqiwu"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="农业废弃物"/>
+        <CheckBox
+            android:id="@+id/manuresort_youji_gongyefeiqiwu"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="工业废弃物"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/manuresort_youji_shenghuolaji"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="生活垃圾"/>
+        <CheckBox
+            android:id="@+id/manuresort_youji_nigou"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="泥垢"/>
+
+    </LinearLayout>
+
+</LinearLayout>

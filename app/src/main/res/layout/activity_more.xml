@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey2"
+    tools:context=".MoreActivity">
+
+    <com.lanling.view.TitlebarView
+        android:id="@+id/more_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/titlebar"
+        app:centerTextColor="@color/white"
+        app:centerTitle="@string/shezhi"
+        app:leftDrawble="@mipmap/fanhui3"
+        app:leftTextColor="@color/white"
+        app:leftText="@string/back"
+        />
+
+    <LinearLayout
+        android:id="@+id/more_linearlayout1"
+        android:layout_below="@+id/more_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_youxiang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/youxiang"
+            app:text="@string/bangdingemail"
+            app:image="@mipmap/go"
+            />
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_fankui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/fankui"
+            app:text="@string/feedback"
+            app:image="@mipmap/go"
+            />
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_xiugai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/xiugai"
+            app:text="@string/updatemessage"
+            app:image="@mipmap/go"
+            ></com.lanling.view.PerSelectView>
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_guanyu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/guanyu"
+            app:text="@string/aboutus"
+            app:image="@mipmap/go"
+            />
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_lianxi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/lianxi"
+            app:text="@string/connectus"
+            app:image="@mipmap/go"
+            ></com.lanling.view.PerSelectView>
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_fengxiang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/fenxiang"
+            app:text="@string/shareapplication"
+            app:image="@mipmap/go"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/more_linearlayout2"
+        android:layout_below="@+id/more_linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/more_tuichu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/tuichu"
+            app:text="@string/loginout"
+            app:image="@mipmap/go"
+            ></com.lanling.view.PerSelectView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

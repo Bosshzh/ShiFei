@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.lanling.fragment.XiaozhishiFragment">
+
+    <com.lanling.view.TitlebarView
+        android:id="@+id/paihang_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/titlebar"
+        app:centerTitle="@string/feiliaoxiaozhishi"
+        app:centerTextColor="#FFF"
+        />
+
+    <WebView
+        android:id="@+id/xiaozhishi_webview"
+        android:layout_below="@id/paihang_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</RelativeLayout>

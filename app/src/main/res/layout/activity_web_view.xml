@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".WebViewActivity"
+    android:orientation="vertical">
+
+    <com.lanling.view.TitlebarView
+        android:id="@+id/webview_titlevarview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/titlebar"
+        app:centerTitle="修改账号密码"
+        app:centerTextColor="#FFF"
+        app:leftDrawble="@mipmap/fanhui3"
+        app:leftText="返回"
+        app:leftTextColor="#fff"
+        app:rightDrawable="@mipmap/fenxiang"
+        app:rightText="分享"
+        app:rightTextColor="@color/white"
+        />
+
+    <WebView
+        android:id="@+id/webview_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </WebView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey2"
+    tools:context="com.lanling.fragment.WodeFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.lanling.view.TitlebarView
+        android:id="@+id/wode_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/titlebar"
+        app:centerTitle="@string/wodexinxi_title_centertext"
+        app:centerTextColor="#FFF"
+        app:rightDrawable="@mipmap/gengduo"
+        app:rightText="@string/more"
+        />
+
+    <RelativeLayout
+        android:id="@+id/wode_relativelayout"
+        android:layout_below="@id/wode_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/wode_head_background"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:id="@+id/wode_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/wode_head_background"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:text="@string/login"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/wode_linearlayout"
+        android:layout_below="@+id/wode_relativelayout"
+        style="@style/wode_background1"
+        >
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/wode_shangchuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/shangchuan1"
+            app:text="@string/wodexinxi_shangchuan"
+            app:image="@mipmap/go"
+            ></com.lanling.view.PerSelectView>
+
+
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/wode_shoucang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/shoucang"
+            app:text="@string/wodexinxi_shoucang"
+            app:image="@mipmap/go"
+            />
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/wode_shezhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@mipmap/shezhi"
+            app:text="@string/shezhi"
+            app:image="@mipmap/go"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/wode_linearlayout"
+        style="@style/wode_background1">
+
+        <com.lanling.view.PerSelectView
+            android:id="@+id/wode_xiaozhishi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:imageview="@drawable/main_zhishi_select"
+            app:text="@string/feiliaoxiaozhishi"
+            app:image="@mipmap/go"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
