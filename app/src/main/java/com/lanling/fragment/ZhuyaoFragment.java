@@ -93,7 +93,7 @@ public class ZhuyaoFragment extends Fragment {
                     intent.putExtra("addrStr",addrStr);
                     intent.putExtra("latitude",latitude);
                     intent.putExtra("longtitude",longtitude);
-                    intent.putExtra("email",sharedPreferences.getString("email","没有绑定"));
+                    intent.putExtra("username",sharedPreferences.getString("username","没有绑定"));
                     intent.putExtra("openid",sharedPreferences.getString("openid","没有绑定"));
                 }else{//如果用户没有登录
                     Util.toastShort(context,"你暂未登录，请先登录");

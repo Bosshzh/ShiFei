@@ -1,11 +1,8 @@
 package com.lanling.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -13,25 +10,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.lanling.util.CountDownTimerUtils;
 import com.lanling.util.Util;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
-import java.util.Random;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.MimeMessage;
-
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText register_username;//用户账号输入框
@@ -46,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         public void handleMessage(@NonNull android.os.Message msg) {
             switch (msg.what){
                 case 0:
-                    Util.toastShort(RegisterActivity.this,"恭喜注册成功!请登录");
+                    Util.toastShort(RegisterActivity.this,"恭喜注册成功!已自动登录");
                     editor.putString("username",username);
                     editor.apply();
                     Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
@@ -63,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
     };
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -99,7 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
                 //如果用户输入的验证码和我们产生的验证码相等的话
                 username = register_username.getText().toString();//拿到用户账号
                 password = register_password.getText().toString();//拿到密码
-                Util.log("RegisterActivity",username+"     "+password);
                 if(password.length() == 0 && username.length() == 0){
                     Util.toastShort(RegisterActivity.this,"用户名或密码不能为空");
                 }else{
@@ -109,15 +92,15 @@ public class RegisterActivity extends AppCompatActivity {
                             Map<String, String> params = new HashMap<String, String>();
                             params.put("username", username);
                             params.put("password", password);
-
                             try {
                                 String result = Util.sendMessage("http://www.zhengzhoudaxue.cn:8080/SaveData/register",params,"utf-8");
-                                if ("0".equals(result)){
-                                    handler.sendEmptyMessage(0);//如果注册成功，那么发送消息0
-                                }else if("1".equals(result)){
+                                if ("1".equals(result)){
                                     handler.sendEmptyMessage(1);//没有注册成功，可能该账号已经被注册过了
-                                }else{
+                                }else if("2".equals(result)){
                                     handler.sendEmptyMessage(2);//注册失败
+                                }else{//如果注册成功，那么发送消息0
+                                    editor.putString("username",username).putString("photouser",result.split("&")[1]).apply();
+                                    handler.sendEmptyMessage(0);//如果登录成功，那么发送消息0
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();

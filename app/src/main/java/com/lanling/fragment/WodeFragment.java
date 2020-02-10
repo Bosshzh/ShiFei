@@ -60,7 +60,6 @@ public class WodeFragment extends Fragment {
     private SharedPreferences sharedPreferences;
     private Tencent mTencent;//腾讯
     private Uri uri;
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -111,7 +110,6 @@ public class WodeFragment extends Fragment {
         titlebarView.setOnViewClick(new TitlebarView.onViewClick() {
             @Override
             public void leftClick() {
-
             }
 
             @Override
@@ -129,7 +127,7 @@ public class WodeFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), WebViewActivity.class);
                     intent.putExtra("title","我的资料");
                     intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/MyInformation.jsp");
-                    intent.putExtra("email",sharedPreferences.getString("email","0"));
+                    intent.putExtra("username",sharedPreferences.getString("username","0"));
                     intent.putExtra("openid",sharedPreferences.getString("openid","0"));
                     startActivity(intent);
                 }else{
@@ -150,7 +148,7 @@ public class WodeFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), WebViewActivity.class);
                     intent.putExtra("title","我的上传");
                     intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/MyUpload.jsp");
-                    intent.putExtra("email",sharedPreferences.getString("email","0"));
+                    intent.putExtra("username",sharedPreferences.getString("username","0"));
                     intent.putExtra("openid",sharedPreferences.getString("openid","0"));
                     startActivity(intent);
                 }else{
@@ -225,7 +223,7 @@ public class WodeFragment extends Fragment {
                     .bitmapTransform(new CropCircleTransformation(getContext()))
                     .into(head);
         }else{
-            String text = "邮箱："+sharedPreferences.getString("email","");
+            String text = "账号："+sharedPreferences.getString("username","");
             user_name.setText(text);
             Glide.with(getContext()).load(Uri.parse(sharedPreferences.getString("photouser","http://www.zhengzhoudaxue.cn:8080/SaveData/images/error.jpg")))
                     .bitmapTransform(new BlurTransformation(getContext(), 25), new CenterCrop(getContext()))

@@ -127,7 +127,7 @@ public class UploadDataActivity extends Activity{
         uploadData.setDistrict(intent2.getStringExtra("district"));
         uploadData.setLatitude(intent2.getDoubleExtra("latitude",0.0d));
         uploadData.setLongitude(intent2.getDoubleExtra("longtitude",0.0d));
-        uploadData.setEmail(intent2.getStringExtra("email"));
+        uploadData.setUsername(intent2.getStringExtra("username"));
         uploadData.setOpenid(intent2.getStringExtra("openid"));
         //作物类型
         upload_cropsort_spinner = findViewById(R.id.upload_cropsort_spinner);//作物类型
@@ -415,7 +415,7 @@ public class UploadDataActivity extends Activity{
                     "(location,province,city,district,latitude,longitude,land_sort,crop_sort,harvest,manure_sort," +
                     "manuresortdanfei,manuresortlinfei,manuresortjiafei,manuresortqita,dongwufenbian,nongyefeiqiwu,gongyefeiqiwu,shenghuolaji,nigou,water_number," +
                     "watertimefirst,watertimesecond,watertimethird,waternumberfirst,waternumbersecond,waternumberthird,manure_number,manuretimefirst,manuretimesecond,manuretimethird," +
-                    "manurenumberfirst,manurenumbersecond,manurenumberthird,spray,weed,upload_time,email,openid,foreign_id)values(" +
+                    "manurenumberfirst,manurenumbersecond,manurenumberthird,spray,weed,upload_time,username,openid,foreign_id)values(" +
                     "?,?,?,?,?,?,?,?,?,?," +
                     "?,?,?,?,?,?,?,?,?,?," +
                     "?,?,?,?,?,?,?,?,?,?," +
@@ -487,7 +487,7 @@ public class UploadDataActivity extends Activity{
                 preparedStatement.setString(34,uploadData.getSpray());//施肥打药
                 preparedStatement.setString(35,uploadData.getWeed());//施肥除草
                 preparedStatement.setDate(36,new java.sql.Date(System.currentTimeMillis()));//上传时间
-                preparedStatement.setString(37,uploadData.getEmail());//上传用户的手机号
+                preparedStatement.setString(37,uploadData.getUsername());//上传用户账号
                 preparedStatement.setString(38,uploadData.getOpenid());//拿到openid
                 preparedStatement.setString(39,foreign_id);//外键
                 publishProgress(60);//进度60

@@ -56,8 +56,8 @@
                 android:layout_weight="7"
                 android:layout_width="0dp"
                 android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="13位以内英文字母/数字"
-                android:maxLength="13"
+                android:hint="15位以内英文字母/数字"
+                android:maxLength="15"
                 android:layout_height="wrap_content" />
 
             <ImageView

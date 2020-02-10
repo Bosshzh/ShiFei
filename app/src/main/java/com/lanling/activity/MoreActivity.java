@@ -27,7 +27,6 @@ import java.util.Map;
 
 public class MoreActivity extends AppCompatActivity {
 
-    private Intent intent;//意图
     private SharedPreferences sharedPreferences;
     private PerSelectView fankui;//用户反馈
     private PerSelectView xiugai;//资料修改
@@ -44,7 +43,7 @@ public class MoreActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             switch (msg.what){
                 case 0:
-                    intent = new Intent(MoreActivity.this, WebViewActivity.class);
+                    Intent intent = new Intent(MoreActivity.this, WebViewActivity.class);
                     intent.putExtra("title", "用户反馈");
                     intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/feedback.jsp");
                     intent.putExtra("email", sharedPreferences.getString("email","0"));
@@ -107,7 +106,7 @@ public class MoreActivity extends AppCompatActivity {
             @Override
             public void onclick() {
                 if(Util.isLogin(MoreActivity.this) == 2) {//如果是邮箱登录的话
-                    intent = new Intent(MoreActivity.this, WebViewActivity.class);
+                    Intent intent = new Intent(MoreActivity.this, WebViewActivity.class);
                     intent.putExtra("title", "用户反馈");
                     intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/feedback.jsp");
                     intent.putExtra("email", sharedPreferences.getString("email", "0"));
@@ -136,7 +135,7 @@ public class MoreActivity extends AppCompatActivity {
                     }.start();
                 } else{//如果既没有邮箱登录，有没有第三方qq登录
                     Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
-                    intent = new Intent(MoreActivity.this,LoginActivity.class);
+                    Intent intent = new Intent(MoreActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }
             }
@@ -145,18 +144,17 @@ public class MoreActivity extends AppCompatActivity {
         xiugai.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {
-                if(Util.isLogin(MoreActivity.this)  == 1) {//如果是第三方QQ登录的话
-                    Util.toastShort(MoreActivity.this, "第三方登录不需要修改资料");
-                }else if(Util.isLogin(MoreActivity.this) == 2){//如果是邮箱登录的话
-                    intent = new Intent(MoreActivity.this,WebViewActivity.class);
-                    intent.putExtra("title", "修改资料");
-                    intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/xiugai.jsp");
-                    intent.putExtra("email", sharedPreferences.getString("email", "0"));
-                    intent.putExtra("openid",sharedPreferences.getString("openid","0"));
+                if(Util.isLogin(MoreActivity.this) == 0){
+                    //如果没有登录的话
+                    Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
+                    Intent intent = new Intent(MoreActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }else{
-                    Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
-                    intent = new Intent(MoreActivity.this,LoginActivity.class);
+                    Intent intent = new Intent(MoreActivity.this,WebViewActivity.class);
+                    intent.putExtra("title", "修改资料");
+                    intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/xiugai.jsp");
+                    intent.putExtra("username", sharedPreferences.getString("username", "0"));
+                    intent.putExtra("openid",sharedPreferences.getString("openid","0"));
                     startActivity(intent);
                 }
             }
@@ -166,20 +164,15 @@ public class MoreActivity extends AppCompatActivity {
             @Override
             public void onclick() {
                 if (Util.isLogin(MoreActivity.this)  != 0){//如果已经登录了的话
-                    if(!"0".equals(sharedPreferences.getString("email","0"))){
-                        //如果已经是邮箱登录了的话
-                        Util.toastShort(MoreActivity.this,"您已经是邮箱登录或者绑定邮箱了，无需绑定");
-                    }else{
-                        intent = new Intent(MoreActivity.this, WebViewActivity.class);
-                        intent.putExtra("title","绑定邮箱账号");
-                        intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/youxiang.jsp");
-                        intent.putExtra("email",sharedPreferences.getString("email","0"));
-                        intent.putExtra("openid",sharedPreferences.getString("openid","0"));
-                        startActivity(intent);
-                    }
+                    Intent intent = new Intent(MoreActivity.this, WebViewActivity.class);
+                    intent.putExtra("title","绑定邮箱账号");
+                    intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/youxiang.jsp");
+                    intent.putExtra("username",sharedPreferences.getString("username","0"));
+                    intent.putExtra("openid",sharedPreferences.getString("openid","0"));
+                    startActivity(intent);
                 }else{
                     Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
-                    intent = new Intent(MoreActivity.this,LoginActivity.class);
+                    Intent intent = new Intent(MoreActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }
             }
@@ -188,7 +181,7 @@ public class MoreActivity extends AppCompatActivity {
         guanyu.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {
-                intent = new Intent(MoreActivity.this, WebViewActivity.class);
+                Intent intent = new Intent(MoreActivity.this, WebViewActivity.class);
                 intent.putExtra("title","关于我们");
                 intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/aboutus.html");
                 intent.putExtra("email",sharedPreferences.getString("email","0"));
@@ -209,7 +202,7 @@ public class MoreActivity extends AppCompatActivity {
             @Override
             public void onclick() {
                 if (Util.isLogin(MoreActivity.this)  != 0){//如果已经登录了的话
-                    sharedPreferences.edit().remove("email").remove("openid").remove("photouser").remove("photoqq").apply();
+                    sharedPreferences.edit().remove("username").remove("openid").remove("photouser").remove("photoqq").apply();
                     Util.toastShort(MoreActivity.this,"退出登录成功");
                     finish();
                 }else{

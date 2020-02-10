@@ -56,7 +56,7 @@ public class UploadData extends LitePalSupport {
     private String land_image2;//土地景观图2
     private String interview_image;//用户访谈图
     private Date date;//上传时间
-    private String email;//邮箱账号
+    private String username;//邮箱账号
     private String openid;//openid
 
     public String getOpenid() {
@@ -195,12 +195,12 @@ public class UploadData extends LitePalSupport {
         this.weed = weed;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public InputStream getLand_image1(){

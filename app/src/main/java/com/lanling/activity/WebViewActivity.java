@@ -32,14 +32,13 @@ public class WebViewActivity extends AppCompatActivity {
     private Intent intent;//意图
     private String title;//标题
     private String url;//地址
-    private String email = "";//邮箱账号
+    private String username = "";//用户账号
     private String openid = "";//openid
     private TitlebarView titlebarView;//标题栏
     private WebSettings webSettings;
     ProgressBar progressbar;
     private Tencent mTencent;// 新建Tencent实例用于调用分享方法
     private BaseUiListener baseUiListener;
-
     private ValueCallback<Uri> uploadMessage;
     private ValueCallback<Uri[]> uploadMessageAboveL;
     private final static int FILE_CHOOSER_RESULT_CODE = 10000;
@@ -57,13 +56,13 @@ public class WebViewActivity extends AppCompatActivity {
         progressbar = new ProgressBar(WebViewActivity.this);//进度
         title = intent.getStringExtra("title");//标题
         url = intent.getStringExtra("url");//地址
-        email = intent.getStringExtra("email");
+        username = intent.getStringExtra("username");
         openid = intent.getStringExtra("openid");
         titlebarView.setTitle(title);
         if(url == null || url.equals("")){
-            url = "http://47.97.193.179:8080/SaveData/error.jsp";//如果url为空的话，显示错误页面
+            url = "http://zhengzhoudaxue.cn:8080/SaveData/error.jsp";//如果url为空的话，显示错误页面
         }else{
-            url = url+"?email="+email+"&openid="+openid;
+            url = url+"?username="+username+"&openid="+openid;
         }
         titlebarView.setOnViewClick(new TitlebarView.onViewClick() {
             @Override
@@ -138,24 +137,7 @@ public class WebViewActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
             }
-
-//            @Override
-//            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-//                view.loadUrl(url);// 强制在当前 WebView 中加载 url
-//                return true;
-//            }
         });
-//        webView.setWebChromeClient(new WebChromeClient() {
-//            @Override
-//            public void onProgressChanged(WebView view, int newProgress) {
-//                super.onProgressChanged(view, newProgress);
-//            }
-//
-//            @Override
-//            public void onReceivedTitle(WebView view, String title) {
-//                super.onReceivedTitle(view, title);
-//            }
-//        });
         webView.loadUrl(url);
     }
     // 2.回调方法触发本地选择文件
@@ -163,7 +145,6 @@ public class WebViewActivity extends AppCompatActivity {
         Intent i = new Intent(Intent.ACTION_GET_CONTENT);
         i.addCategory(Intent.CATEGORY_OPENABLE);
         i.setType("image/*");//图片上传
-//        i.setType("file/*");//文件上传
         i.setType("*/*");//文件上传
         startActivityForResult(Intent.createChooser(i, "Image Chooser"), FILE_CHOOSER_RESULT_CODE);
     }

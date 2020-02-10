@@ -42,6 +42,7 @@ public class Util {
     }
 
     public static String sendMessage(String path, Map<String, String> params, String encode) throws IOException {
+        String result = "";//返回的结果
         url = new URL(path);
         StringBuffer stringBuffer = new StringBuffer();
         if (params != null && !params.isEmpty()){
@@ -56,47 +57,43 @@ public class Util {
                 }
             }
             stringBuffer.deleteCharAt(stringBuffer.length()-1);//去掉最后一个字符
-            Util.log("LoginActivity",stringBuffer.toString());
             conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(3000);
             //设置允许输入输出
             conn.setDoInput(true);
             conn.setDoOutput(true);
+            conn.setUseCaches(false);//Post方式不能缓存，需手动设置为false
             byte[] mydata = stringBuffer.toString().getBytes();
             //设置请求报文头，设定请求数据类型
-            conn.setRequestProperty("Content-Type",
-                    "application/x-www-form-urlencoded");
+//            conn.setRequestProperty("Content-Type",
+//                    "application/x-www-form-urlencoded");
             //设置请求数据长度
-            conn.setRequestProperty("Content-Length",
-                    String.valueOf(mydata.length));
+//            conn.setRequestProperty("Content-Length",
+//                    String.valueOf(mydata.length));
             //设置POST方式请求数据
             conn.setRequestMethod("POST");
             OutputStream outputStream = conn.getOutputStream();
             outputStream.write(mydata);
-            int responseCode = conn.getResponseCode();
-            if (responseCode == 200){
-                log("RegisterActivity","执行到这里了1111");
-                return changeInputStream(conn.getInputStream(),encode);
-            }
-        }
-        return "";
-    }
-
-    public static String changeInputStream(InputStream inputStream,String encode){
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        byte[] data = new byte[1024];
-        int len = 0;
-        String result="";
-        if (inputStream != null) {
-            try {
-                while ((len = inputStream.read(data)) != -1) {
-                    outputStream.write(data,0,len);
+            outputStream.flush();
+            if (conn.getResponseCode() == 200){
+//                return changeInputStream(conn.getInputStream(),encode);
+                InputStream inputStream = conn.getInputStream();
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                byte[] data = new byte[1024];
+                int len = 0;
+                if (inputStream != null) {
+                    try {
+                        while ((len = inputStream.read(data)) != -1) {
+                            byteArrayOutputStream.write(data,0,len);
+                        }
+                        result = new String(byteArrayOutputStream.toByteArray(),encode);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
-                result=new String(outputStream.toByteArray(),encode);
-            } catch (IOException e) {
-                e.printStackTrace();
             }
         }
+        conn.disconnect();
         return result;
     }
 
@@ -111,5 +108,4 @@ public class Util {
             return 0;//没有登录
         }
     }
-
 }
