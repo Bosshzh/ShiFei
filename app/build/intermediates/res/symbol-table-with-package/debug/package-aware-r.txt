@@ -942,6 +942,7 @@ id forget_password
 id forget_titlebarview
 id forget_verification
 id forget_verification_button
+id forgetpassword_relativelayout
 id forgetpassword_text
 id fragment_container
 id fuwuchanping_titlebarview_title

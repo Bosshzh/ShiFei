@@ -3,6 +3,8 @@ package com.lanling.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,12 +42,15 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     private String verification_code;//验证码
     private String email;//邮箱账号
     private String password;//密码
+    private SharedPreferences.Editor editor;
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull android.os.Message msg) {
             switch (msg.what){
                 case 0:
-                    Util.toastShort(ForgetPasswordActivity.this,"修改密码成功");
+                    Util.toastShort(ForgetPasswordActivity.this,"修改密码成功，已自动登录");
+                    Intent intent = new Intent(ForgetPasswordActivity.this,MainActivity.class);
+                    startActivity(intent);
                     finish();//结束当前活动
                     break;
                 case 1:
@@ -74,6 +79,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
+        editor = getSharedPreferences("user",MODE_PRIVATE).edit();
         titlebarView = findViewById(R.id.forget_titlebarview);//标题栏
         titlebarView.setOnViewClick(new TitlebarView.onViewClick() {
             @Override
@@ -100,8 +106,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 //如果用户输入的验证码和我们产生的验证码不相等的话
                 if (!verication_edit.getText().toString().equals(verification_code)){
                     Util.toastShort(ForgetPasswordActivity.this,"验证码验证失败，请重试");
-                }else if (password.length() == 0){
-                    Util.toastShort(ForgetPasswordActivity.this,"请输入密码");
+                }else if (password.length() == 0 && email.length() == 0){//密码不能为空
+                    Util.toastShort(ForgetPasswordActivity.this,"邮箱或密码不能为空");
                 }else{
                     new Thread(){
                         @Override
@@ -111,14 +117,15 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                             params.put("password", password);
                             try {
                                 String result = Util.sendMessage("http://www.zhengzhoudaxue.cn:8080/SaveData/forget",params,"utf-8");
-                                if ("0".equals(result)){
-                                    handler.sendEmptyMessage(0);//修改密码成功，那么发送消息0
-                                }else if("1".equals(result)){
+                                if("1".equals(result)){
                                     handler.sendEmptyMessage(1);//修改密码失败，那么发送消息1
                                 }else if("2".equals(result)){
                                     handler.sendEmptyMessage(2);//该账号可能不存在
                                 }else if("3".equals(result)){
                                     handler.sendEmptyMessage(3);//服务器报错，请重试
+                                }else{
+                                   editor.putString("username",result.split("&")[1]).putString("photouser",result.split("&")[2]).apply();
+                                    handler.sendEmptyMessage(0);//修改密码成功，那么发送消息0
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -141,7 +148,6 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 public void run() {
                     super.run();
                     Random ra =new Random();
-
                     for (int i=0;i<6;i++){
                         verification_code+=ra.nextInt(10);
                     }
@@ -157,7 +163,6 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                             handler.sendEmptyMessage(5);//验证码发送失败
                         }else{
                             handler.sendEmptyMessage(6);//验证码发送失败，未知原因
-                            Util.log("RegisterActivity",result);
                         }
                     } catch (IOException e) {
                         e.printStackTrace();

@@ -58,8 +58,6 @@ public class WodeFragment extends Fragment {
     private PerSelectView shezhi;//设置
     private Context context;//上下文
     private SharedPreferences sharedPreferences;
-    private Tencent mTencent;//腾讯
-    private Uri uri;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;

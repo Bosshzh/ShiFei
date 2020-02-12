@@ -38,33 +38,6 @@ public class MoreActivity extends AppCompatActivity {
     private PerSelectView fenxiang;//分享qq
     private Tencent mTencent;// 新建Tencent实例用于调用分享方法
     private BaseUiListener baseUiListener;
-    private Handler handler = new Handler(){
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            switch (msg.what){
-                case 0:
-                    Intent intent = new Intent(MoreActivity.this, WebViewActivity.class);
-                    intent.putExtra("title", "用户反馈");
-                    intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/feedback.jsp");
-                    intent.putExtra("email", sharedPreferences.getString("email","0"));
-                    intent.putExtra("openid",sharedPreferences.getString("openid","0"));
-                    startActivity(intent);
-                    break;
-                case 1:
-                    Util.toastShort(MoreActivity.this,"您还没有绑定邮箱，请先绑定邮箱");
-                    intent = new Intent(MoreActivity.this,WebViewActivity.class);
-                    intent.putExtra("title","绑定邮箱");
-                    intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/youxiang.jsp");
-                    intent.putExtra("email", sharedPreferences.getString("email", "0"));
-                    intent.putExtra("openid",sharedPreferences.getString("openid","0"));
-                    startActivity(intent);
-                    break;
-                case 2:
-                    Util.toastShort(MoreActivity.this,"出错");
-                    break;
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,37 +78,16 @@ public class MoreActivity extends AppCompatActivity {
         fankui.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {
-                if(Util.isLogin(MoreActivity.this) == 2) {//如果是邮箱登录的话
+                if(Util.isLogin(MoreActivity.this) == 0){//如果没有登录的话
+                    Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
+                    Intent intent = new Intent(MoreActivity.this,LoginActivity.class);
+                    startActivity(intent);
+                }else{//如果已经登录的话
                     Intent intent = new Intent(MoreActivity.this, WebViewActivity.class);
                     intent.putExtra("title", "用户反馈");
                     intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/feedback.jsp");
-                    intent.putExtra("email", sharedPreferences.getString("email", "0"));
+                    intent.putExtra("username", sharedPreferences.getString("username","0"));
                     intent.putExtra("openid",sharedPreferences.getString("openid","0"));
-                    startActivity(intent);
-                } else if (Util.isLogin(MoreActivity.this) == 1) {//如果是第三方qq登录的话
-                    new Thread(){
-                        @Override
-                        public void run() {
-                            final Map<String,String> params = new HashMap<>();
-                            params.put("openid",sharedPreferences.getString("openid","0"));
-                            try {
-                                String result = Util.sendMessage("http://www.zhengzhoudaxue.cn:8080/SaveData/bangding",params,"utf-8");
-                                if("1".equals(result)){
-                                    handler.sendEmptyMessage(1);//没有绑定邮箱
-                                }else if("2".equals(result)){
-                                    handler.sendEmptyMessage(2);//出错
-                                }else{
-                                    sharedPreferences.edit().putString("email",result).apply();//将邮箱存入本地
-                                    handler.sendEmptyMessage(0);//绑定了邮箱
-                                }
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }.start();
-                } else{//如果既没有邮箱登录，有没有第三方qq登录
-                    Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
-                    Intent intent = new Intent(MoreActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }
             }
