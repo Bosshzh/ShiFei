@@ -100,16 +100,20 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\abc_ic_clear_material.xml"
-    },
-    {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_suiji.png.flat",
         "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\drawable\\suiji.png"
     },
     {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_qq2.png.flat",
+        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\mipmap-hdpi\\qq2.png"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_radio_to_off_mtrl_ring_outer_path_animation.xml.flat",
@@ -118,10 +122,6 @@
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
-        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_qq2.png.flat",
-        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\mipmap-hdpi\\qq2.png"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_bar.xml.flat",
@@ -140,12 +140,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_press_perselect.xml.flat",
         "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\drawable\\press_perselect.xml"
+    },
+    {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_radio_to_off_mtrl_dot_group_animation.xml.flat",
@@ -336,12 +336,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_upload_address_linearlayout_pressed.xml.flat",
-        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\drawable\\upload_address_linearlayout_pressed.xml"
-    },
-    {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_more.xml.flat",
         "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\layout\\activity_more.xml"
+    },
+    {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_upload_address_linearlayout_pressed.xml.flat",
+        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\drawable\\upload_address_linearlayout_pressed.xml"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
@@ -378,6 +378,10 @@
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_bendi.png.flat",
+        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\mipmap-hdpi\\bendi.png"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_borderless_material.xml.flat",
@@ -1672,12 +1676,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_icon.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_qq_top_bottom.xml.flat",
         "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\drawable\\login_qq_top_bottom.xml"
+    },
+    {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_icon.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",

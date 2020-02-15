@@ -58,6 +58,15 @@ public class UploadData extends LitePalSupport {
     private Date date;//上传时间
     private String username;//邮箱账号
     private String openid;//openid
+    private boolean uploadOrNot;//用户是否已经上传数据
+
+    public boolean isUploadOrNot() {
+        return uploadOrNot;
+    }
+
+    public void setUploadOrNot(boolean uploadOrNot) {
+        this.uploadOrNot = uploadOrNot;
+    }
 
     public String getOpenid() {
         return openid;

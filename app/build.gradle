@@ -62,7 +62,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation files('libs/mysql-connector-java-5.1.20.jar')
-    implementation 'org.litepal.android:core:1.6.1'
+    implementation 'org.litepal.android:java:3.0.0'
     //JAVA-MAIL
     implementation 'com.sun.mail:android-mail:1.6.0'
     implementation 'com.sun.mail:android-activation:1.6.0'

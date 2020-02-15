@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements XiaozhishiFragmen
             initFragments();
         }
     }
-    //
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -142,4 +142,13 @@ public class MainActivity extends AppCompatActivity implements XiaozhishiFragmen
             }
         });
     }//初始化所有Fragment
+
+    //判断用户是否开启GPS和网络
+    private boolean isGpsAndIntenet(){
+        return false;
+    }
+
+    //判断本地是否存储有数据
+
+
 }

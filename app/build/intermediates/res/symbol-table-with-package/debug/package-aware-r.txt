@@ -1165,6 +1165,7 @@ id week
 id welcome_framelayout
 id wheelLayout
 id withText
+id wode_bendi
 id wode_head
 id wode_head_background
 id wode_linearlayout
@@ -1266,6 +1267,7 @@ layout shifei_item
 layout support_simple_spinner_dropdown_item
 mipmap app_icon
 mipmap app_icon_round1
+mipmap bendi
 mipmap daiding
 mipmap denglu
 mipmap denglu_background

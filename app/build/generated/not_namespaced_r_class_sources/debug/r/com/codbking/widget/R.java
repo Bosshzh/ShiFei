@@ -694,8 +694,8 @@ public final class R {
         public static final int week = 0x7f080153;
         public static final int wheelLayout = 0x7f080155;
         public static final int withText = 0x7f080156;
-        public static final int wrap_content = 0x7f080162;
-        public static final int year = 0x7f080164;
+        public static final int wrap_content = 0x7f080163;
+        public static final int year = 0x7f080165;
     }
     public static final class integer {
         private integer() {}
