@@ -17,7 +17,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.lanling.activity.LocalDataActivity;
 import com.lanling.activity.LoginActivity;
+import com.lanling.activity.MainActivity;
 import com.lanling.activity.MoreActivity;
 import com.lanling.activity.R;
 import com.lanling.activity.WebViewActivity;
@@ -52,10 +54,10 @@ public class WodeFragment extends Fragment {
     private ImageView head;//头像
     private TextView user_name;//用户名
     private PerSelectView shangchuang;//我的上传
-    private PerSelectView shoucang;//收藏
     private PerSelectView xiaozhishi;//肥料小知识
     private TitlebarView titlebarView;//标题栏
     private PerSelectView shezhi;//设置
+    private PerSelectView bendi;//本地数据
     private Context context;//上下文
     private SharedPreferences sharedPreferences;
     // TODO: Rename and change types of parameters
@@ -135,9 +137,6 @@ public class WodeFragment extends Fragment {
             }
         });
         shangchuang = view.findViewById(R.id.wode_shangchuan);//我的上传
-        shoucang = view.findViewById(R.id.wode_shoucang);//我的收藏
-        xiaozhishi = view.findViewById(R.id.wode_xiaozhishi);//小知识
-        shezhi = view.findViewById(R.id.wode_shezhi);//设置
         //我的上传监听事件
         shangchuang.setOnClickView(new PerSelectView.OnClickView() {
             @Override
@@ -157,21 +156,18 @@ public class WodeFragment extends Fragment {
             }
         });
 
-        //收藏事件
-        shoucang.setOnClickView(new PerSelectView.OnClickView() {
+        //本地存储
+        bendi = view.findViewById(R.id.wode_bendi);//本地存储
+        bendi.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {
-                if(Util.isLogin(getActivity()) != 0){//如果已经登录的话
-                    Util.toastShort(getContext(),"您已经登录了，马上查看我的收藏");
-                }else{
-                    Util.toastShort(getContext(),"您暂时没有登录，请先登录");
-                    Intent intent = new Intent(getActivity(),LoginActivity.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getContext(), LocalDataActivity.class);
+                startActivity(intent);
             }
         });
 
         //小知识
+        xiaozhishi = view.findViewById(R.id.wode_xiaozhishi);//小知识
         xiaozhishi.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {
@@ -183,6 +179,7 @@ public class WodeFragment extends Fragment {
         });
 
         //设置
+        shezhi = view.findViewById(R.id.wode_shezhi);//设置
         shezhi.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {

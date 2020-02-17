@@ -3,25 +3,32 @@ package com.lanling.bean;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
+import android.os.Parcel;
 import org.litepal.crud.LitePalSupport;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Date;
 
-public class UploadData extends LitePalSupport {
+public class UploadData extends LitePalSupport implements Serializable {
 
+    //地理信息
     private String location;//地理位置
     private String province;//省级
     private String city;//市级
     private String district;//县级
     private double latitude = 0.0;//纬度
     private double longitude = 0.0;//经度
+
+    //耕地
     private String crop_sort = "小麦";//作物种类
     private String land_sort = "水田";//土地类型
     private int harvest;//产量
+
+
     //肥料的种类
     private String manure_sort = "不施肥";//肥料的种类
     private int danfei;//氮肥
@@ -435,4 +442,9 @@ public class UploadData extends LitePalSupport {
     public void setWater_number(int water_number) {
         this.water_number = water_number;
     }
+
+
+
+
+
 }

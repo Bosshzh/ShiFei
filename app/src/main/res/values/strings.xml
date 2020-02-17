@@ -22,7 +22,7 @@
     <string name="paihang_radiobutton">小知识</string>
 
     <!-- 注册登录 -->
-<!--    <string name="username">邮 箱:</string>-->
+    <!--    <string name="username">邮 箱:</string>-->
     <string name="password">密 码:</string>
     <string name="login_button">登  录</string>
     <string name="register_button">注  册</string>

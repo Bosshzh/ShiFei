@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LocalDataActivity"
+    android:background="@color/grey2">
+
+    <com.lanling.view.TitlebarView
+        android:id="@+id/local_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/per_select"
+        android:background="@color/titlebar"
+        app:centerTitle="本地数据"
+        app:centerTextColor="#FFF"
+        app:leftDrawble="@mipmap/fanhui3"
+        app:leftText="返回"
+        app:leftTextColor="@color/white"
+        app:rightDrawable="@mipmap/shangchuan1"
+        app:rightText="一键上传"
+        app:rightTextColor="@color/white"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/local_recyclerview"
+        android:layout_below="@id/local_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LocalDataItemActivity">
+
+    <!--标题栏-->
+    <com.lanling.view.TitlebarView
+        android:id="@+id/localdataitem_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/per_select"
+        android:background="@color/titlebar"
+        app:centerTitle="本地数据"
+        app:centerTextColor="#FFF"
+        app:leftDrawble="@mipmap/fanhui3"
+        app:leftText="返回"
+        app:leftTextColor="@color/white"
+        app:rightDrawable="@mipmap/shangchuan1"
+        app:rightText="上传数据"
+        app:rightTextColor="@color/white"
+        />
+
+    <ScrollView
+        android:layout_below="@+id/localdataitem_titlebarview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/list_in_item"
+            android:background="@color/grey2"
+            >
+
+            <!--地理信息-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:text="地理信息"
+                    android:padding="@dimen/padding_title"
+                    android:textStyle="bold"/>
+
+                <!--地理位置-->
+                <LinearLayout
+                    android:id="@+id/localdataitem_address_relativelayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+                    <!--具体位置-->
+                    <TextView
+                        android:id="@+id/localdataitem_address"
+                        android:text="@string/unknowlocation"
+                        style="@style/upload_address_textview_style"
+                        android:background="@drawable/bottom_border_background"
+                        />
+                    <!--经纬度-->
+                    <TextView
+                        android:id="@+id/localdataitem_latitude_longtitude"
+                        android:layout_below="@+id/tv_address"
+                        android:text="纬度:，经度:"
+                        style="@style/upload_address_textview_style"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--种植信息-->
+            <LinearLayout
+                android:id="@+id/localdataitem_feiliao1_linearlayoutlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="耕地"
+                    android:textSize="15dp"
+                    android:padding="@dimen/padding_title"
+                    android:textStyle="bold"/>
+
+                <!--耕地信息-->
+                <LinearLayout
+                    android:id="@+id/localdataitem_address_relativelayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+                    <!--种植作物-->
+                    <TextView
+                        android:id="@+id/localdataitem_textview_zuowu"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/per_select"
+                        android:text="种植作物"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:background="@drawable/bottom_border_background"
+                        />
+                    <!--耕地类型-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/per_select"
+                        android:text="耕地类型"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:background="@drawable/bottom_border_background"/>
+                    <!--粮食产量-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/per_select"
+                        android:text="粮食亩产量"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--施肥、浇水-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="施肥/浇水"
+                    android:textSize="15dp"
+                    android:padding="@dimen/padding_title"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/localdataitem_address_relativelayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+                        <!--肥料种类-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/per_select"
+                            android:text="肥料种类"
+                            android:textColor="@color/black"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="12dp"
+                            />
+                        <!--作物施肥次数-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/per_select"
+                            android:text="作物施肥次数"
+                            android:textColor="@color/black"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="12dp" />
+                        <!--浇水次数-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/per_select"
+                            android:text="浇水次数"
+                            android:textColor="@color/black"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="其它"
+                    android:textSize="15dp"
+                    android:padding="@dimen/padding_title"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/localdataitem_feiliao2_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@color/white">
+                    <!--是否打药-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="是否打药"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select" />
+                    <!--是否除草-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="是否除草"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/per_select" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="土地景观图"
+                    android:textSize="15dp"
+                    android:padding="@dimen/padding_title"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="300px"
+                    android:orientation="horizontal">
+                    <!--土地景观图1-->
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="200px"
+                        />
+                    <!--土地景观图2-->
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="200px"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="现场访谈图"
+                    android:textSize="15dp"
+                    android:padding="@dimen/padding_title"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="300px">
+                    <!--现场访谈图-->
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="200px"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/localdataitem_submit_button"
+                    android:text="删除此条数据"
+                    android:background="@color/red1"
+                    android:drawableTop="@mipmap/shangchuan"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

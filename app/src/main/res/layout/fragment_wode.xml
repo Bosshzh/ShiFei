@@ -9,12 +9,13 @@
     <com.lanling.view.TitlebarView
         android:id="@+id/wode_titlebarview_title"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/per_select"
         android:background="@color/titlebar"
         app:centerTitle="@string/wodexinxi_title_centertext"
         app:centerTextColor="#FFF"
         app:rightDrawable="@mipmap/gengduo"
         app:rightText="@string/more"
+        app:rightTextColor="@color/white"
         />
 
     <RelativeLayout
@@ -78,25 +79,14 @@
             app:image="@mipmap/go"
             ></com.lanling.view.PerSelectView>
 
-
-
-        <com.lanling.view.PerSelectView
-            android:id="@+id/wode_shoucang"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:imageview="@mipmap/shoucang"
-            app:text="@string/wodexinxi_shoucang"
-            app:image="@mipmap/go"
-            />
-
         <com.lanling.view.PerSelectView
             android:id="@+id/wode_shezhi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:imageview="@mipmap/shezhi"
-            app:text="@string/shezhi"
             app:image="@mipmap/go"
-            />
+            app:imageview="@mipmap/shezhi"
+            app:text="@string/shezhi" />
+
 
     </LinearLayout>
 

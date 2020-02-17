@@ -278,7 +278,8 @@ public class UploadDataActivity extends Activity{
     //先存本地
     public void uploadSaveButton(View view){
         if (landImageView1 != null && landImageView2 != null && interviewImageView != null){
-            Util.toastShort(UploadDataActivity.this,uploadData.save()?"存储成功，下次再进入的时候回自动进行询问":"存储失败");
+            uploadData.setDate(new Date(System.currentTimeMillis()));
+            Util.toastShort(UploadDataActivity.this,uploadData.save()?"存储成功，下次再进入的时候会自动进行询问":"存储失败");
             Intent intent = new Intent(UploadDataActivity.this,MainActivity.class);
             startActivity(intent);
             finish();
@@ -289,6 +290,7 @@ public class UploadDataActivity extends Activity{
     //提交数据按钮
     public void uploadSubmitButton(View view){
         if (landImageView1 != null && landImageView2 != null && interviewImageView != null){
+            uploadData.setDate(new Date(System.currentTimeMillis()));
             progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("土地施肥信息");
             progressDialog.setMessage("正在上传，请稍后...(数据同时会自动保存本地)");
@@ -493,10 +495,7 @@ public class UploadDataActivity extends Activity{
                 preparedStatement.setInt(33,uploadData.getManureNumber_third());//第三次施肥量
                 preparedStatement.setString(34,uploadData.getSpray());//施肥打药
                 preparedStatement.setString(35,uploadData.getWeed());//施肥除草
-
-
-
-                preparedStatement.setDate(36,new java.sql.Date(System.currentTimeMillis()));//上传时间
+                preparedStatement.setDate(36, new java.sql.Date(uploadData.getDate().getTime()));//上传时间
                 preparedStatement.setString(37,uploadData.getUsername());//上传用户账号
                 preparedStatement.setString(38,uploadData.getOpenid());//拿到openid
                 preparedStatement.setString(39,foreign_id);//外键
