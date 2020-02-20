@@ -13,21 +13,19 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.RadioGroup;
-import com.lanling.fragment.XiaozhishiFragment;
+
 import com.lanling.fragment.WodeFragment;
 import com.lanling.fragment.ZhuyaoFragment;
 import com.lanling.util.Util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements XiaozhishiFragment.OnFragmentInteractionListener,
-        ZhuyaoFragment.OnFragmentInteractionListener,
+public class MainActivity extends AppCompatActivity implements ZhuyaoFragment.OnFragmentInteractionListener,
         WodeFragment.OnFragmentInteractionListener{
 
     private RadioGroup main_radiogroup;//主活动下面的radiogroup
     private FragmentManager mFragmentManager;//FragmentManager
     private ZhuyaoFragment zhuyaoFragment;//主要Fragment
-    private XiaozhishiFragment paihangFragment;//肥料小知识Fragment
     private WodeFragment wodeFragment;//我的信息Fragment
     private FragmentTransaction fragmentTransaction;
     //申请两个权限，录音和文件读写
@@ -74,9 +72,6 @@ public class MainActivity extends AppCompatActivity implements XiaozhishiFragmen
         if(null != zhuyaoFragment){
             fragmentTransaction.hide(zhuyaoFragment);
         }
-        if (null != paihangFragment){
-            fragmentTransaction.hide(paihangFragment);
-        }
     }//隐藏掉所有Fragment
     @Override
     public void onFragmentInteraction(Uri uri) {
@@ -114,11 +109,9 @@ public class MainActivity extends AppCompatActivity implements XiaozhishiFragmen
         //说明权限都已经通过，可以做你想做的事情去
         mFragmentManager = getSupportFragmentManager();
         zhuyaoFragment = new ZhuyaoFragment();//主要Fragment
-        paihangFragment = new XiaozhishiFragment();//小知识Fragment
         wodeFragment = new WodeFragment();//我的信息Fragment
         fragmentTransaction = mFragmentManager.beginTransaction();//开启一个事务
         fragmentTransaction.add(R.id.fragment_container,zhuyaoFragment,null);//加入主要Fragment
-        fragmentTransaction.add(R.id.fragment_container,paihangFragment,null);//加入小知识Fragment
         fragmentTransaction.add(R.id.fragment_container,wodeFragment,null);//加入我的信息Fragment
         hideFragments(fragmentTransaction);//隐藏掉所有Fragment
         fragmentTransaction.show(zhuyaoFragment);//展示主要Fragment
@@ -131,9 +124,6 @@ public class MainActivity extends AppCompatActivity implements XiaozhishiFragmen
                 switch (checkedId){
                     case R.id.main_fuwuchanping:
                         fragmentTransaction.show(zhuyaoFragment);//展示主要Fragment
-                        break;
-                    case R.id.main_jingcaishunjian:
-                        fragmentTransaction.show(paihangFragment);//展示小知识Fragment
                         break;
                     case R.id.main_wode:
                         fragmentTransaction.show(wodeFragment);//展示我的信息Fragment

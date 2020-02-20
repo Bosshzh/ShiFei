@@ -14,7 +14,6 @@ import com.lanling.view.TitlebarView;
 import org.litepal.LitePal;
 import java.text.SimpleDateFormat;
 import java.util.List;
-
 /**
  * 用户已上传的数据会自动存储在本地
  * 用户未上传的数据也会在这里保存
@@ -23,6 +22,7 @@ public class LocalDataActivity extends AppCompatActivity {
 
     private TitlebarView titlebarView;//标题栏
     private List<UploadData> uploadDatas;//集合
+    private LocalDataAdapter localDataAdapter;//适配器
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +46,25 @@ public class LocalDataActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.local_recyclerview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        LocalDataAdapter localDataAdapter = new LocalDataAdapter(uploadDatas,new SimpleDateFormat("yyyy年MM月dd日"));
+        localDataAdapter = new LocalDataAdapter(uploadDatas,new SimpleDateFormat("yyyy年MM月dd日 HH:mm"));
         //适配器点击事件
         localDataAdapter.setOnClickView(new LocalDataAdapter.OnClickView() {
             @Override
-            public void onLongClickView(int position) {//长按某一项的点击事件
+            public void onLongClickView(final int position) {//长按某一项的点击事件
                 //弹出框询问是否删除
                 AlertDialog alertDialog = new AlertDialog.Builder(LocalDataActivity.this)
                         .setTitle("删除")
-                        .setMessage("是否删除本条数据")
+                        .setMessage("是否删除本条数据？")
                         .setIcon(R.mipmap.app_icon)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Util.toastShort(LocalDataActivity.this,"你点击了删除，暂时还没有实现");
+                                if(LitePal.deleteAll(UploadData.class,"uploadid=?",""+uploadDatas.get(position).getUploadid()) != 0){
+                                    Util.toastShort(LocalDataActivity.this,"删除成功");
+                                    localDataAdapter.removeData(position);
+                                }else{
+                                    Util.toastShort(LocalDataActivity.this,"删除失败");
+                                }
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -75,9 +80,27 @@ public class LocalDataActivity extends AppCompatActivity {
                 //点击查看该具体数据
                 Intent intent = new Intent(LocalDataActivity.this,LocalDataItemActivity.class);
                 intent.putExtra("uploadData", uploadDatas.get(position));
+                intent.putExtra("position",position);
                 startActivity(intent);
             }
         });
         recyclerView.setAdapter(localDataAdapter);
+    }
+
+    //如果intent发生改变的话
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = getIntent();
+        int position = intent.getIntExtra("position",-1);
+        if(position != -1){
+            localDataAdapter.removeData(position);
+        }
     }
 }

@@ -3,7 +3,6 @@ package com.lanling.bean;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
-import android.os.Parcel;
 import org.litepal.crud.LitePalSupport;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,6 +13,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class UploadData extends LitePalSupport implements Serializable {
+
+    private String uploadid;//编号
 
     //地理信息
     private String location;//地理位置
@@ -109,6 +110,13 @@ public class UploadData extends LitePalSupport implements Serializable {
         this.manureNumber_first = 0;
         this.manureNumber_second = 0;
         this.manureNumber_third = 0;
+    }
+
+    public String getUploadid() {
+        return uploadid;
+    }
+    public void setUploadid(String uploadid) {
+        this.uploadid = uploadid;
     }
     public String getProvince() {
         return province;
@@ -230,6 +238,9 @@ public class UploadData extends LitePalSupport implements Serializable {
         }
         return null;
     }
+    public String getLand_Iamge1_String(){
+        return land_image1;
+    }
     public void setLand_image1(String land_image1) {
         this.land_image1 = land_image1;
     }
@@ -244,6 +255,9 @@ public class UploadData extends LitePalSupport implements Serializable {
         }
         return null;
     }
+    public String getLand_Iamge2_String(){
+        return land_image2;
+    }
     public void setLand_image2(String land_image2) {
         this.land_image2 = land_image2;
     }
@@ -257,6 +271,9 @@ public class UploadData extends LitePalSupport implements Serializable {
             e.printStackTrace();
         }
         return null;
+    }
+    public String getInterview_image_String(){
+        return interview_image;
     }
     public void setInterview_image(String interview_image) {
         this.interview_image = interview_image;

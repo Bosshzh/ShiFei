@@ -1344,10 +1344,6 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_xiaozhishi.xml.flat",
-        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\layout\\fragment_xiaozhishi.xml"
-    },
-    {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_gengduo.png.flat",
         "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\mipmap-hdpi\\gengduo.png"
     },
@@ -1454,6 +1450,10 @@
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_yincang.png.flat",
         "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\mipmap-hdpi\\yincang.png"
+    },
+    {
+        "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_shanchu.png.flat",
+        "source": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\src\\main\\res\\mipmap-hdpi\\shanchu.png"
     },
     {
         "merged": "D:\\project\\android_studio\\workspace\\ShiFei\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_indicator_material.xml.flat",

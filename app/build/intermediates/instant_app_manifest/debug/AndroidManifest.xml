@@ -43,8 +43,12 @@
         android:testOnly="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.lanling.activity.LocalDataItemActivity" />
-        <activity android:name="com.lanling.activity.LocalDataActivity" />
+        <activity
+            android:name="com.lanling.activity.LocalDataItemActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.lanling.activity.LocalDataActivity"
+            android:launchMode="singleTask" />
         <activity
             android:name="com.lanling.activity.MoreActivity"
             android:launchMode="singleTask" /> <!-- QQ第三方登录 -->

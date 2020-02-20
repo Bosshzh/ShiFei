@@ -97,118 +97,124 @@
 43-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:43:9-52
 44        android:usesCleartextTraffic="true" >
 44-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:44:9-44
-45        <activity android:name="com.lanling.activity.LocalDataItemActivity" />
-45-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:9-68
-45-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:19-56
-46        <activity android:name="com.lanling.activity.LocalDataActivity" />
-46-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:9-55
-46-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:19-52
-47        <activity
-47-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:47:9-49:47
-48            android:name="com.lanling.activity.MoreActivity"
-48-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:48:13-41
-49            android:launchMode="singleTask" /> <!-- QQ第三方登录 -->
-49-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:49:13-44
-50        <activity
-50-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:50:9-62:20
-51            android:name="com.tencent.tauth.AuthActivity"
-51-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:51:13-58
-52            android:launchMode="singleTask"
-52-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:52:13-44
-53            android:noHistory="true" >
-53-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:53:13-37
-54            <intent-filter>
-54-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:54:13-61:29
-55                <action android:name="android.intent.action.VIEW" />
-55-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:55:17-69
-55-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:55:25-66
-56
-57                <category android:name="android.intent.category.DEFAULT" />
-57-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:57:17-76
-57-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:57:27-73
-58                <category android:name="android.intent.category.BROWSABLE" />
-58-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:58:17-78
-58-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:58:27-75
-59
-60                <data android:scheme="tencent1109968603" />
-60-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:60:17-60
-60-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:60:23-57
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:63:9-67:75
-64            android:name="com.tencent.connect.common.AssistActivity"
-64-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:64:13-69
-65            android:configChanges="orientation|keyboardHidden"
-65-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:65:13-63
-66            android:screenOrientation="behind"
-66-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:66:13-47
-67            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-67-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:67:13-72
-68        <activity android:name="com.lanling.activity.ForgetPasswordActivity" />
-68-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:68:9-60
-68-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:68:19-57
-69        <activity
-69-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:69:9-71:47
-70            android:name="com.lanling.activity.WebViewActivity"
-70-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:70:13-44
-71            android:launchMode="singleTask" />
-71-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:71:13-44
-72
-73        <meta-data
-73-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:73:9-75:64
-74            android:name="com.baidu.lbsapi.API_KEY"
-74-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:74:13-52
-75            android:value="wU53RrKOd8uLlm1hORM0zYcKeXCdthqm" />
-75-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:75:13-61
+45        <activity
+45-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:9-100
+46            android:name="com.lanling.activity.LocalDataItemActivity"
+46-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:19-56
+47            android:launchMode="singleTask" />
+47-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:57-88
+48        <activity
+48-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:9-86
+49            android:name="com.lanling.activity.LocalDataActivity"
+49-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:19-52
+50            android:launchMode="singleTask" />
+50-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:53-84
+51        <activity
+51-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:47:9-49:47
+52            android:name="com.lanling.activity.MoreActivity"
+52-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:48:13-41
+53            android:launchMode="singleTask" /> <!-- QQ第三方登录 -->
+53-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:49:13-44
+54        <activity
+54-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:50:9-62:20
+55            android:name="com.tencent.tauth.AuthActivity"
+55-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:51:13-58
+56            android:launchMode="singleTask"
+56-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:52:13-44
+57            android:noHistory="true" >
+57-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:53:13-37
+58            <intent-filter>
+58-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:54:13-61:29
+59                <action android:name="android.intent.action.VIEW" />
+59-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:55:17-69
+59-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:55:25-66
+60
+61                <category android:name="android.intent.category.DEFAULT" />
+61-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:57:17-76
+61-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:57:27-73
+62                <category android:name="android.intent.category.BROWSABLE" />
+62-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:58:17-78
+62-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:58:27-75
+63
+64                <data android:scheme="tencent1109968603" />
+64-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:60:17-60
+64-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:60:23-57
+65            </intent-filter>
+66        </activity>
+67        <activity
+67-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:63:9-67:75
+68            android:name="com.tencent.connect.common.AssistActivity"
+68-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:64:13-69
+69            android:configChanges="orientation|keyboardHidden"
+69-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:65:13-63
+70            android:screenOrientation="behind"
+70-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:66:13-47
+71            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+71-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:67:13-72
+72        <activity android:name="com.lanling.activity.ForgetPasswordActivity" />
+72-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:68:9-60
+72-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:68:19-57
+73        <activity
+73-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:69:9-71:47
+74            android:name="com.lanling.activity.WebViewActivity"
+74-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:70:13-44
+75            android:launchMode="singleTask" />
+75-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:71:13-44
 76
-77        <activity
-77-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:77:9-79:47
-78            android:name="com.lanling.activity.UploadDataActivity"
-78-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:78:13-47
-79            android:launchMode="singleTask" />
-79-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:79:13-44
-80        <activity
-80-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:80:9-82:47
-81            android:name="com.lanling.activity.RegisterActivity"
-81-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:81:13-45
-82            android:launchMode="singleTask" />
-82-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:82:13-44
-83        <activity
-83-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:83:9-85:47
-84            android:name="com.lanling.activity.LoginActivity"
-84-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:84:13-42
-85            android:launchMode="singleTask" />
-85-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:85:13-44
-86        <activity
-86-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:86:9-88:47
-87            android:name="com.lanling.activity.MainActivity"
-87-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:87:13-41
-88            android:launchMode="singleTask" />
-88-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:88:13-44
-89        <activity android:name="com.lanling.activity.WelcomeActivity" >
-89-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:89:9-95:20
-89-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:89:19-50
-90            <intent-filter>
-90-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:90:13-94:29
-91                <action android:name="android.intent.action.MAIN" />
-91-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:91:17-69
-91-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:91:25-66
-92
-93                <category android:name="android.intent.category.LAUNCHER" />
-93-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:93:17-77
-93-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:93:27-74
-94            </intent-filter>
-95        </activity>
+77        <meta-data
+77-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:73:9-75:64
+78            android:name="com.baidu.lbsapi.API_KEY"
+78-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:74:13-52
+79            android:value="wU53RrKOd8uLlm1hORM0zYcKeXCdthqm" />
+79-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:75:13-61
+80
+81        <activity
+81-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:77:9-79:47
+82            android:name="com.lanling.activity.UploadDataActivity"
+82-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:78:13-47
+83            android:launchMode="singleTask" />
+83-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:79:13-44
+84        <activity
+84-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:80:9-82:47
+85            android:name="com.lanling.activity.RegisterActivity"
+85-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:81:13-45
+86            android:launchMode="singleTask" />
+86-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:82:13-44
+87        <activity
+87-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:83:9-85:47
+88            android:name="com.lanling.activity.LoginActivity"
+88-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:84:13-42
+89            android:launchMode="singleTask" />
+89-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:85:13-44
+90        <activity
+90-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:86:9-88:47
+91            android:name="com.lanling.activity.MainActivity"
+91-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:87:13-41
+92            android:launchMode="singleTask" />
+92-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:88:13-44
+93        <activity android:name="com.lanling.activity.WelcomeActivity" >
+93-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:89:9-95:20
+93-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:89:19-50
+94            <intent-filter>
+94-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:90:13-94:29
+95                <action android:name="android.intent.action.MAIN" />
+95-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:91:17-69
+95-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:91:25-66
 96
-97        <service
-97-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:97:9-100:41
-98            android:name="com.baidu.location.f"
-98-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:98:13-48
-99            android:enabled="true"
-99-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:99:13-35
-100            android:process=":remote" />
-100-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:100:13-38
-101    </application>
-102
-103</manifest>
+97                <category android:name="android.intent.category.LAUNCHER" />
+97-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:93:17-77
+97-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:93:27-74
+98            </intent-filter>
+99        </activity>
+100
+101        <service
+101-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:97:9-100:41
+102            android:name="com.baidu.location.f"
+102-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:98:13-48
+103            android:enabled="true"
+103-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:99:13-35
+104            android:process=":remote" />
+104-->D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:100:13-38
+105    </application>
+106
+107</manifest>

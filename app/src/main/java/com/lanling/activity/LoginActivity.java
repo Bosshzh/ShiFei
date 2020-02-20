@@ -7,16 +7,13 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lanling.bean.User;
 import com.lanling.util.Util;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQToken;
@@ -29,7 +26,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
     private boolean isServerSideLogin = false;//变量
     private SharedPreferences.Editor editor;//SharedPreferences存储
     private static UserInfo userInfo;
-    private User user;
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {

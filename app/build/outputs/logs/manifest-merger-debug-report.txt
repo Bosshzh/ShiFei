@@ -174,11 +174,15 @@ MERGED from [com.contrarywind:wheelview:4.0.8] C:\Users\Administrator\.gradle\ca
 	android:name
 		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:38:9-54
 activity#com.lanling.activity.LocalDataItemActivity
-ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:9-68
+ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:9-100
+	android:launchMode
+		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:57-88
 	android:name
 		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:45:19-56
 activity#com.lanling.activity.LocalDataActivity
-ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:9-55
+ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:9-86
+	android:launchMode
+		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:53-84
 	android:name
 		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:46:19-52
 activity#com.lanling.activity.MoreActivity

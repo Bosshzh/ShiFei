@@ -1,22 +1,14 @@
 package com.lanling.adapter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.lanling.activity.LocalDataItemActivity;
 import com.lanling.activity.R;
 import com.lanling.bean.UploadData;
-import com.lanling.util.Util;
-
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -51,6 +43,12 @@ public class LocalDataAdapter extends RecyclerView.Adapter<LocalDataAdapter.View
     public LocalDataAdapter(List<UploadData> uploadDatas, SimpleDateFormat simpleDateFormat){
         this.uploadDatas = uploadDatas;
         this.simpleDateFormat = simpleDateFormat;
+    }
+
+    public void removeData(int position){
+        uploadDatas.remove(position);
+        //刷新
+        notifyItemRemoved(position);
     }
 
     @NonNull

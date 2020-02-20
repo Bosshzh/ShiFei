@@ -65,8 +65,8 @@
             android:id="@+id/wode_shangchuan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:imageview="@mipmap/shangchuan1"
-            app:text="@string/wodexinxi_shangchuan"
+            app:imageview="@mipmap/yunduan"
+            app:text="云端数据"
             app:image="@mipmap/go"
             ></com.lanling.view.PerSelectView>
 
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:imageview="@mipmap/bendi"
-            app:text="本地存储"
+            app:text="本地数据"
             app:image="@mipmap/go"
             ></com.lanling.view.PerSelectView>
 
@@ -98,7 +98,7 @@
             android:id="@+id/wode_xiaozhishi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:imageview="@drawable/main_zhishi_select"
+            app:imageview="@drawable/main_zhishi_unselect"
             app:text="@string/feiliaoxiaozhishi"
             app:image="@mipmap/go"
             />

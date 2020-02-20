@@ -25,13 +25,6 @@
         >
 
         <RadioButton
-            android:id="@+id/main_jingcaishunjian"
-            style="@style/tab_style"
-            android:layout_weight="1"
-            android:textSize="13dp"
-            android:drawableTop="@drawable/fragment1"
-            android:text="@string/paihang_radiobutton"/>
-        <RadioButton
             android:id="@+id/main_fuwuchanping"
             style="@style/tab_style"
             android:checked="true"

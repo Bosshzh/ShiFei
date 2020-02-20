@@ -53,14 +53,14 @@
 
                 <!--地理位置-->
                 <LinearLayout
-                    android:id="@+id/localdataitem_address_relativelayout1"
+                    android:id="@+id/localdataitem_address_linearlayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:orientation="vertical">
                     <!--具体位置-->
                     <TextView
-                        android:id="@+id/localdataitem_address"
+                        android:id="@+id/localdataitem_address_textview"
                         android:text="@string/unknowlocation"
                         style="@style/upload_address_textview_style"
                         android:background="@drawable/bottom_border_background"
@@ -78,7 +78,7 @@
 
             <!--种植信息-->
             <LinearLayout
-                android:id="@+id/localdataitem_feiliao1_linearlayoutlayout"
+                android:id="@+id/localdataitem_gengdi_linearlayoutlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -101,7 +101,7 @@
                     android:orientation="vertical">
                     <!--种植作物-->
                     <TextView
-                        android:id="@+id/localdataitem_textview_zuowu"
+                        android:id="@+id/localdataitem_zuowu_textview"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/per_select"
                         android:text="种植作物"
@@ -112,6 +112,7 @@
                         />
                     <!--耕地类型-->
                     <TextView
+                        android:id="@+id/localdataitem_leixing_textview"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/per_select"
                         android:text="耕地类型"
@@ -121,6 +122,7 @@
                         android:background="@drawable/bottom_border_background"/>
                     <!--粮食产量-->
                     <TextView
+                        android:id="@+id/localdataitem_chanliang_textview"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/per_select"
                         android:text="粮食亩产量"
@@ -146,36 +148,181 @@
                     android:textStyle="bold"/>
 
                 <LinearLayout
-                    android:id="@+id/localdataitem_address_relativelayout3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:orientation="vertical">
-                        <!--肥料种类-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/per_select"
-                            android:text="肥料种类"
-                            android:textColor="@color/black"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="12dp"
-                            />
-                        <!--作物施肥次数-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/per_select"
-                            android:text="作物施肥次数"
-                            android:textColor="@color/black"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="12dp" />
-                        <!--浇水次数-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/per_select"
-                            android:text="浇水次数"
-                            android:textColor="@color/black"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="12dp" />
+                    <!--肥料种类-->
+                    <TextView
+                        android:id="@+id/localdataitem_feiliaozhonglei_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/per_select"
+                        android:background="@drawable/bottom_border_background"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:text="肥料种类"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:background="@drawable/bottom_border_background"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!--氮肥-->
+                            <TextView
+                                android:id="@+id/localdataitem_danfei_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="氮肥:" />
+                            <!--磷肥-->
+                            <TextView
+                                android:id="@+id/localdataitem_linfei_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="磷肥:" />
+                            <!--钾肥-->
+                            <TextView
+                                android:id="@+id/localdataitem_jiafei_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="钾肥:" />
+                            <!--其它肥-->
+                            <TextView
+                                android:id="@+id/localdataitem_qitafei_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="其它肥:" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!--动物粪便-->
+                            <TextView
+                                android:id="@+id/localdataitem_dongwufenbian_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="动物粪便:" />
+                            <!--农业废弃物-->
+                            <TextView
+                                android:id="@+id/localdataitem_nongyefeiqiwu_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="农业废弃物:" />
+                            <!--工业废弃物-->
+                            <TextView
+                                android:id="@+id/localdataitem_gongyefeiqiwu_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="工业废弃物:" />
+                            <!--生活垃圾-->
+                            <TextView
+                                android:id="@+id/localdataitem_shenghuolaji_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="生活垃圾:" />
+                            <!--泥垢-->
+                            <TextView
+                                android:id="@+id/localdataitem_nigou_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lay_height"
+                                android:gravity="center_vertical"
+                                android:text="泥垢:" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--作物施肥次数-->
+                    <TextView
+                        android:id="@+id/localdataitem_shifeicishu_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/per_select"
+                        android:background="@drawable/bottom_border_background"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:text="作物施肥次数"
+                        android:textColor="@color/black" />
+                    <!--第一次施肥-->
+                    <TextView
+                        android:id="@+id/localdataitem_shifei1_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_height"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="第一次施肥" />
+                    <!--第二次施肥-->
+                    <TextView
+                        android:id="@+id/localdataitem_shifei2_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_height"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="第二次施肥" />
+                    <!--第三次施肥-->
+                    <TextView
+                        android:id="@+id/localdataitem_shifei3_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_height"
+                        android:layout_marginLeft="50dp"
+                        android:background="@drawable/bottom_border_background"
+                        android:gravity="center_vertical"
+                        android:text="第三次施肥" />
+
+                    <!--浇水次数-->
+                    <TextView
+                        android:id="@+id/localdataitem_jiaoshuicishu_linearlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/per_select"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:text="浇水次数"
+                        android:textColor="@color/black"
+                        android:background="@drawable/bottom_border_background"/>
+                    <!--第一次浇水-->
+                    <TextView
+                        android:id="@+id/localdataitem_jiaoshui1_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_height"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="第一次浇水" />
+                    <!--第二次浇水-->
+                    <TextView
+                        android:id="@+id/localdataitem_jiaoshui2_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_height"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="第二次浇水" />
+                    <!--第三次浇水-->
+                    <TextView
+                        android:id="@+id/localdataitem_jiaoshui3_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_height"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="第三次浇水" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -195,7 +342,7 @@
                     android:textStyle="bold"/>
 
                 <LinearLayout
-                    android:id="@+id/localdataitem_feiliao2_linearlayout"
+                    android:id="@+id/localdataitem_qita_linearlayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -203,6 +350,7 @@
                     android:background="@color/white">
                     <!--是否打药-->
                     <TextView
+                        android:id="@+id/localdataitem_dayao_textview"
                         android:layout_weight="1"
                         android:text="是否打药"
                         android:textColor="@color/black"
@@ -212,6 +360,7 @@
                         android:layout_height="@dimen/per_select" />
                     <!--是否除草-->
                     <TextView
+                        android:id="@+id/localdataitem_chucao_textview"
                         android:layout_weight="1"
                         android:text="是否除草"
                         android:textColor="@color/black"
@@ -235,21 +384,13 @@
                     android:textSize="15dp"
                     android:padding="@dimen/padding_title"
                     android:textStyle="bold"/>
-
+                <!--土地景观图-->
                 <LinearLayout
+                    android:id="@+id/localdataitem_image1_linearlayout"
                     android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="300px"
                     android:orientation="horizontal">
-                    <!--土地景观图1-->
-                    <ImageView
-                        android:layout_width="200px"
-                        android:layout_height="200px"
-                        />
-                    <!--土地景观图2-->
-                    <ImageView
-                        android:layout_width="200px"
-                        android:layout_height="200px"/>
 
                 </LinearLayout>
 
@@ -261,16 +402,16 @@
                     android:textSize="15dp"
                     android:padding="@dimen/padding_title"
                     android:textStyle="bold"/>
-
+                <!--现场访谈图-->
                 <LinearLayout
+                    android:id="@+id/localdataitem_image2_linearlayout"
                     android:background="@color/white"
                     android:layout_width="match_parent"
-                    android:layout_height="300px">
-                    <!--现场访谈图-->
-                    <ImageView
-                        android:layout_width="200px"
-                        android:layout_height="200px"/>
+                    android:layout_height="300px"
+                    android:orientation="horizontal">
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -279,10 +420,10 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/localdataitem_submit_button"
+                    android:id="@+id/localdataitem_delete_button"
                     android:text="删除此条数据"
                     android:background="@color/red1"
-                    android:drawableTop="@mipmap/shangchuan"
+                    android:drawableTop="@mipmap/shanchu"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_margin="5dp"

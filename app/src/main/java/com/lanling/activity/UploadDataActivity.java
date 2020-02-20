@@ -66,7 +66,6 @@ public class UploadDataActivity extends Activity{
     private ManureSortYoujiLinearLayout manureSortYoujiLinearLayout;//单个有机肥料种类的控件
 
     //一亩地施肥量
-    private NumberPicker numberPicker;//一亩地施肥量
     private Spinner manurenumber_spinner;//作物施肥次数
     private ManureNumberLinearLayout shiFeiLinearLayout;//跟肥料相关的布局文件
     private LinearLayout upload_shifeicishu_linearlayout;//装每一次施肥布局的Linearlayout
@@ -115,6 +114,8 @@ public class UploadDataActivity extends Activity{
 
             }
         });//标题栏监听器
+        //编号
+        uploadData.setUploadid(System.currentTimeMillis()+""+(int)(Math.random()*10));
         //地址
         mTvAddress = (TextView) findViewById(R.id.tv_address);//地址
         mTvAddress.setText(intent2.getStringExtra("addrStr"));
@@ -394,7 +395,7 @@ public class UploadDataActivity extends Activity{
             uploadData.setUploadOrNot(true);
             //同时将数据保存在本地
             uploadData.save();
-            Util.toastShort(UploadDataActivity.this,"数据上传成功");
+            Util.toastShort(UploadDataActivity.this,"数据上传成功，自动保存在本地");
             progressDialog.dismiss();//避免窗口泄露
             numberPickerUtil.closeDialog();//关掉窗口，避免窗口泄露
             Intent intent = new Intent(UploadDataActivity.this,MainActivity.class);
@@ -421,89 +422,88 @@ public class UploadDataActivity extends Activity{
             publishProgress(40);//进度40
             //插入message表
             String insert_message = "insert into message" +
-                    "(location,province,city,district,latitude,longitude,land_sort,crop_sort,harvest,manure_sort," +
+                    "(id,location,province,city,district,latitude,longitude,land_sort,crop_sort,harvest,manure_sort," +
                     "manuresortdanfei,manuresortlinfei,manuresortjiafei,manuresortqita,dongwufenbian,nongyefeiqiwu,gongyefeiqiwu,shenghuolaji,nigou,water_number," +
                     "watertimefirst,watertimesecond,watertimethird,waternumberfirst,waternumbersecond,waternumberthird,manure_number,manuretimefirst,manuretimesecond,manuretimethird," +
-                    "manurenumberfirst,manurenumbersecond,manurenumberthird,spray,weed,upload_time,username,openid,foreign_id)values(" +
+                    "manurenumberfirst,manurenumbersecond,manurenumberthird,spray,weed,upload_time,username,openid)values(" +
+                    "?,?,?,?,?,?,?,?,?,?,?," +
                     "?,?,?,?,?,?,?,?,?,?," +
                     "?,?,?,?,?,?,?,?,?,?," +
-                    "?,?,?,?,?,?,?,?,?,?," +
-                    "?,?,?,?,?,?,?,?,?)";
-            String insert_images = "insert into images (foreign_id,landimage1,landimage2,interview) values(?,?,?,?)";
+                    "?,?,?,?,?,?,?,?)";
+            String insert_images = "insert into images (id,landimage1,landimage2,interview) values(?,?,?,?)";
             PreparedStatement preparedStatement = null;
             PreparedStatement preparedStatement1 = null;
-            String foreign_id = System.currentTimeMillis()+"";
             publishProgress(50);//进度50
             try {
                 preparedStatement = connection.prepareStatement(insert_message);//插入message表
-                preparedStatement.setString(1,uploadData.getLocation());//地理信息
-                preparedStatement.setString(2,uploadData.getProvince());//省份
-                preparedStatement.setString(3,uploadData.getCity());//城市
-                preparedStatement.setString(4,uploadData.getDistrict());//区级/县级
-                preparedStatement.setDouble(5,uploadData.getLatitude());//纬度
-                preparedStatement.setDouble(6,uploadData.getLongitude());//经度
-                preparedStatement.setString(7,uploadData.getLand_sort());//土地类型
-                preparedStatement.setString(8,uploadData.getCrop_sort());//作物类型
-                preparedStatement.setFloat(9,uploadData.getHarvest());//产量
-                preparedStatement.setString(10,uploadData.getManure_sort());//肥料种类
-                preparedStatement.setInt(11,uploadData.getDanfei());//氮肥所占百分比
-                preparedStatement.setInt(12,uploadData.getLinfei());//磷肥所占百分比
-                preparedStatement.setInt(13,uploadData.getJiafei());//钾肥所占百分比
-                preparedStatement.setInt(14,uploadData.getQita());//其它微量元素所占百分比
-                preparedStatement.setString(15,uploadData.getDongwufenbian());//是否有动物粪便
-                preparedStatement.setString(16,uploadData.getNongyefeiqiwu());//是否有农业废弃物
-                preparedStatement.setString(17,uploadData.getGongyefeiqiwu());//是否有工业废弃物
-                preparedStatement.setString(18,uploadData.getShenghuolaji());//是否有生活垃圾
-                preparedStatement.setString(19,uploadData.getNigou());//是否有泥垢
-                preparedStatement.setInt(20,uploadData.getWater_number());//浇水的次数
+                preparedStatement.setString(1,uploadData.getUploadid());
+                preparedStatement.setString(2,uploadData.getLocation());//地理信息
+                preparedStatement.setString(3,uploadData.getProvince());//省份
+                preparedStatement.setString(4,uploadData.getCity());//城市
+                preparedStatement.setString(5,uploadData.getDistrict());//区级/县级
+                preparedStatement.setDouble(6,uploadData.getLatitude());//纬度
+                preparedStatement.setDouble(7,uploadData.getLongitude());//经度
+                preparedStatement.setString(8,uploadData.getLand_sort());//土地类型
+                preparedStatement.setString(9,uploadData.getCrop_sort());//作物类型
+                preparedStatement.setFloat(10,uploadData.getHarvest());//产量
+                preparedStatement.setString(11,uploadData.getManure_sort());//肥料种类
+                preparedStatement.setInt(12,uploadData.getDanfei());//氮肥所占百分比
+                preparedStatement.setInt(13,uploadData.getLinfei());//磷肥所占百分比
+                preparedStatement.setInt(14,uploadData.getJiafei());//钾肥所占百分比
+                preparedStatement.setInt(15,uploadData.getQita());//其它微量元素所占百分比
+                preparedStatement.setString(16,uploadData.getDongwufenbian());//是否有动物粪便
+                preparedStatement.setString(17,uploadData.getNongyefeiqiwu());//是否有农业废弃物
+                preparedStatement.setString(18,uploadData.getGongyefeiqiwu());//是否有工业废弃物
+                preparedStatement.setString(19,uploadData.getShenghuolaji());//是否有生活垃圾
+                preparedStatement.setString(20,uploadData.getNigou());//是否有泥垢
+                preparedStatement.setInt(21,uploadData.getWater_number());//浇水的次数
                 if (uploadData.getWaterDate_first() != null){
-                    preparedStatement.setDate(21,new Date(uploadData.getWaterDate_first().getTime()));//第一次浇水时间
+                    preparedStatement.setDate(22,new Date(uploadData.getWaterDate_first().getTime()));//第一次浇水时间
                 }else{
-                    preparedStatement.setDate(21,null);//第一次浇水时间
+                    preparedStatement.setDate(22,null);//第一次浇水时间
                 }//第一次浇水时间
                 if (uploadData.getWaterDate_second() != null){
-                    preparedStatement.setDate(22,new Date(uploadData.getWaterDate_second().getTime()));//第二次浇水时间
+                    preparedStatement.setDate(23,new Date(uploadData.getWaterDate_second().getTime()));//第二次浇水时间
                 }else{
-                    preparedStatement.setDate(22,null);//第二次浇水时间
+                    preparedStatement.setDate(23,null);//第二次浇水时间
                 }//第二次浇水时间
                 if (uploadData.getWaterDate_third() != null){
-                    preparedStatement.setDate(23,new Date(uploadData.getWaterDate_third().getTime()));//第三次浇水时间
+                    preparedStatement.setDate(24,new Date(uploadData.getWaterDate_third().getTime()));//第三次浇水时间
                 }else{
-                    preparedStatement.setDate(23,null);//第三次浇水时间
+                    preparedStatement.setDate(24,null);//第三次浇水时间
                 }//第三次浇水时间
-                preparedStatement.setInt(24,uploadData.getWaterNumber_first());//第一次浇水量
-                preparedStatement.setInt(25,uploadData.getWaterNumber_second());//第二次浇水量
-                preparedStatement.setInt(26,uploadData.getWaterNumber_third());//第三次浇水量
-                preparedStatement.setInt(27,uploadData.getManure_number());//施肥的次数
+                preparedStatement.setInt(25,uploadData.getWaterNumber_first());//第一次浇水量
+                preparedStatement.setInt(26,uploadData.getWaterNumber_second());//第二次浇水量
+                preparedStatement.setInt(27,uploadData.getWaterNumber_third());//第三次浇水量
+                preparedStatement.setInt(28,uploadData.getManure_number());//施肥的次数
                 if (uploadData.getManureDate_first() != null){
-                    preparedStatement.setDate(28,new Date(uploadData.getManureDate_first().getTime()));//第一次施肥的时间
-                }else{
-                    preparedStatement.setDate(28,null);//第一次施肥的时间
-                }//第一次浇水时间
-                if (uploadData.getManureDate_second() != null){
-                    preparedStatement.setDate(29,new Date(uploadData.getManureDate_second().getTime()));//第二次施肥的时间
+                    preparedStatement.setDate(29,new Date(uploadData.getManureDate_first().getTime()));//第一次施肥的时间
                 }else{
                     preparedStatement.setDate(29,null);//第一次施肥的时间
-                }//第二次浇水时间
-                if (uploadData.getManureDate_third() != null){
-                    preparedStatement.setDate(30,new Date(uploadData.getManureDate_third().getTime()));//第三次施肥的时间
+                }//第一次浇水时间
+                if (uploadData.getManureDate_second() != null){
+                    preparedStatement.setDate(30,new Date(uploadData.getManureDate_second().getTime()));//第二次施肥的时间
                 }else{
                     preparedStatement.setDate(30,null);//第一次施肥的时间
+                }//第二次浇水时间
+                if (uploadData.getManureDate_third() != null){
+                    preparedStatement.setDate(31,new Date(uploadData.getManureDate_third().getTime()));//第三次施肥的时间
+                }else{
+                    preparedStatement.setDate(31,null);//第一次施肥的时间
                 }//第三次浇水时间
-                preparedStatement.setInt(31,uploadData.getManureNumber_first());//第一次施肥量
-                preparedStatement.setInt(32,uploadData.getManureNumber_second());//第二次施肥量
-                preparedStatement.setInt(33,uploadData.getManureNumber_third());//第三次施肥量
-                preparedStatement.setString(34,uploadData.getSpray());//施肥打药
-                preparedStatement.setString(35,uploadData.getWeed());//施肥除草
-                preparedStatement.setDate(36, new java.sql.Date(uploadData.getDate().getTime()));//上传时间
-                preparedStatement.setString(37,uploadData.getUsername());//上传用户账号
-                preparedStatement.setString(38,uploadData.getOpenid());//拿到openid
-                preparedStatement.setString(39,foreign_id);//外键
+                preparedStatement.setInt(32,uploadData.getManureNumber_first());//第一次施肥量
+                preparedStatement.setInt(33,uploadData.getManureNumber_second());//第二次施肥量
+                preparedStatement.setInt(34,uploadData.getManureNumber_third());//第三次施肥量
+                preparedStatement.setString(35,uploadData.getSpray());//施肥打药
+                preparedStatement.setString(36,uploadData.getWeed());//施肥除草
+                preparedStatement.setDate(37, new java.sql.Date(uploadData.getDate().getTime()));//上传时间
+                preparedStatement.setString(38,uploadData.getUsername());//上传用户账号
+                preparedStatement.setString(39,uploadData.getOpenid());//拿到openid
                 publishProgress(60);//进度60
                 preparedStatement.executeUpdate();
                 publishProgress(70);//进度70
                 preparedStatement1 = connection.prepareStatement(insert_images);
-                preparedStatement1.setString(1,foreign_id);//外键
+                preparedStatement1.setString(1,uploadData.getUploadid());//外键
                 preparedStatement1.setBlob(2,uploadData.getLand_image1());//土地景观图1
                 preparedStatement1.setBlob(3,uploadData.getLand_image2());//土地景观图2
                 preparedStatement1.setBlob(4,uploadData.getInterview_image());//现场访谈图
@@ -514,26 +514,27 @@ public class UploadDataActivity extends Activity{
                 publishProgress(90);//进度90
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
-            if (preparedStatement != null){
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+            }finally {
+                if (preparedStatement != null){
+                    try {
+                        preparedStatement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-            if (preparedStatement1 != null){
-                try {
-                    preparedStatement1.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                if (preparedStatement1 != null){
+                    try {
+                        preparedStatement1.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                if (connection != null){
+                    try {
+                        connection.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
             publishProgress(100);//进度100
