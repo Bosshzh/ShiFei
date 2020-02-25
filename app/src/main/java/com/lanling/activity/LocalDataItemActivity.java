@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lanling.bean.UploadData;
+import com.lanling.util.UploadDataUtil;
 import com.lanling.util.Util;
 import com.lanling.view.TitlebarView;
 
@@ -71,7 +72,6 @@ public class LocalDataItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_data_item);
-        Util.log("LocalDataItemActivity","执行到这里了");
         Intent intent = getIntent();
         uploadData = (UploadData) intent.getSerializableExtra("uploadData");//获取到传递过来的UploadData对象
         position = intent.getIntExtra("position",0);
@@ -85,8 +85,8 @@ public class LocalDataItemActivity extends AppCompatActivity {
             }
 
             @Override
-            public void rightClick() {//点击标题栏右侧一键上传按钮
-                Util.toastShort(LocalDataItemActivity.this,"你点击了一键上传，还没有成功");
+            public void rightClick() {//点击标题栏右侧上传按钮
+                UploadDataUtil.upoload("http://www.zhengzhoudaxue.cn:8080/SaveData/uploaddata",uploadData);
             }
         });
 

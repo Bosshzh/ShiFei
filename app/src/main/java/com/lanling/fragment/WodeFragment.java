@@ -143,7 +143,7 @@ public class WodeFragment extends Fragment {
             public void onclick() {
                 if(Util.isLogin(getActivity()) != 0){//如果已经登录的话
                     Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                    intent.putExtra("title","我的上传");
+                    intent.putExtra("title","云端数据");
                     intent.putExtra("url","http://www.zhengzhoudaxue.cn:8080/SaveData/MyUpload.jsp");
                     intent.putExtra("username",sharedPreferences.getString("username","0"));
                     intent.putExtra("openid",sharedPreferences.getString("openid","0"));

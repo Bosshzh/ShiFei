@@ -3,31 +3,31 @@
 3    package="com.lanling.activity.test" >
 4
 5    <uses-sdk
-5-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:5:5-74
+5-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:5:15-41
+6-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:5:42-71
+7-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:11:5-15:70
+9-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:11:5-15:70
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:11:22-76
+10-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:11:22-76
 11        android:functionalTest="false"
-11-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:14:22-52
+11-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:13:22-53
+12-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:13:22-53
 13        android:label="Tests for com.lanling.activity"
-13-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:15:22-68
+13-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:15:22-68
 14        android:targetPackage="com.lanling.activity" />
-14-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:12:22-66
+14-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:12:22-66
 15
 16    <application android:debuggable="true" >
-16-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:7:5-9:19
-16-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:7:18-43
+16-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:7:5-9:19
+16-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:7:18-43
 17        <uses-library android:name="android.test.runner" />
-17-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:8:9-60
-17-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2567552277258058641.xml:8:23-57
+17-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:8:9-60
+17-->D:\project\android_studio\workspace\ShiFei\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger1553950178397146386.xml:8:23-57
 18    </application>
 19
 20</manifest>

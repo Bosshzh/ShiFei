@@ -65,18 +65,17 @@ public class Util {
             conn.setUseCaches(false);//Post方式不能缓存，需手动设置为false
             byte[] mydata = stringBuffer.toString().getBytes();
             //设置请求报文头，设定请求数据类型
-//            conn.setRequestProperty("Content-Type",
-//                    "application/x-www-form-urlencoded");
+            conn.setRequestProperty("Content-Type",
+                    "application/x-www-form-urlencoded");
             //设置请求数据长度
-//            conn.setRequestProperty("Content-Length",
-//                    String.valueOf(mydata.length));
+            conn.setRequestProperty("Content-Length",
+                    String.valueOf(mydata.length));
             //设置POST方式请求数据
             conn.setRequestMethod("POST");
             OutputStream outputStream = conn.getOutputStream();
             outputStream.write(mydata);
             outputStream.flush();
             if (conn.getResponseCode() == 200){
-//                return changeInputStream(conn.getInputStream(),encode);
                 InputStream inputStream = conn.getInputStream();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 byte[] data = new byte[1024];

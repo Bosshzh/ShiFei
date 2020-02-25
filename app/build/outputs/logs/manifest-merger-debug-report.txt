@@ -13,7 +13,6 @@ MERGED from [com.contrarywind:Android-PickerView:4.1.6] C:\Users\Administrator\.
 MERGED from [org.litepal.android:java:3.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\335698254fbf5311f9105aabf75f8e8f\java-3.0.0\AndroidManifest.xml:2:1-14:12
 MERGED from [org.litepal.android:core:3.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b4ad5ad95bb014916275da6cf7d0093c\jetified-core-3.0.0\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ca3ed72cfdc57fc3a102e462c0327875\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d934be3c652b5ff5c18e2d68c8236453\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c63ceca946e9bc27525371878741042e\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\8d97f43c730baedb50b76131bea8976c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -311,8 +310,6 @@ MERGED from [org.litepal.android:core:3.0.0] C:\Users\Administrator\.gradle\cach
 MERGED from [org.litepal.android:core:3.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\b4ad5ad95bb014916275da6cf7d0093c\jetified-core-3.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ca3ed72cfdc57fc3a102e462c0327875\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\ca3ed72cfdc57fc3a102e462c0327875\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\f64c8351ef0c9a7a800019d28185706c\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d934be3c652b5ff5c18e2d68c8236453\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\d934be3c652b5ff5c18e2d68c8236453\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-2\files-2.1\c63ceca946e9bc27525371878741042e\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41

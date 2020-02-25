@@ -459,9 +459,4 @@ public class UploadData extends LitePalSupport implements Serializable {
     public void setWater_number(int water_number) {
         this.water_number = water_number;
     }
-
-
-
-
-
 }
