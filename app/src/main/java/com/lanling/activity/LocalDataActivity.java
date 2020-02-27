@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import com.lanling.adapter.LocalDataAdapter;
 import com.lanling.bean.UploadData;
+import com.lanling.util.UploadDataUtil;
 import com.lanling.util.Util;
 import com.lanling.view.TitlebarView;
 import org.litepal.LitePal;
@@ -38,11 +39,11 @@ public class LocalDataActivity extends AppCompatActivity {
             }
             @Override
             public void rightClick() {
-                List<UploadData> notUploadDatas = LitePal.select().where("uploadOrNot=?","false").find(UploadData.class);
+                List<UploadData> notUploadDatas = LitePal.where("uploadOrNot = ?", "0").find(UploadData.class);
                 if (notUploadDatas.size() == 0 || notUploadDatas == null){
                     Util.toastShort(LocalDataActivity.this,"本地数据都已采集过");
                 }else{//上传数据
-
+                    UploadDataUtil.uploadDatas("http://www.zhengzhoudaxue.cn:8080/SaveData/uploaddata",uploadDatas,LocalDataActivity.this);
                 }
             }
         });

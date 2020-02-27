@@ -19,17 +19,9 @@ import com.lanling.util.Util;
 import com.lanling.view.TitlebarView;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import java.util.Random;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.MimeMessage;
 
 public class ForgetPasswordActivity extends AppCompatActivity {
 

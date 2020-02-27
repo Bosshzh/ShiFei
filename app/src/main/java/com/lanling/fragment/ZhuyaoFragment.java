@@ -85,7 +85,13 @@ public class ZhuyaoFragment extends Fragment {
             public void rightClick() {
                 Intent intent = null;
                 //判断一下用户是否登录
-                if(Util.isLogin(getContext()) != 0){//如果用户已经登录的话
+                if(Util.isLogin(getContext()) == 0){//如果用户没有登录
+                    Util.toastShort(context,"你暂未登录，请先登录");
+                    intent = new Intent(context, LoginActivity.class);
+                    startActivity(intent);
+                }else if (addrStr == null){//如果用户已经登录,但是还没有获取到定位信息
+                    Util.toastShort(context,"定位失败，请确保已开启GPS定位");
+                }else{//已经登录，已经获取定位信息
                     intent = new Intent(context, UploadDataActivity.class);
                     intent.putExtra("province",province);
                     intent.putExtra("city",city);
@@ -95,11 +101,8 @@ public class ZhuyaoFragment extends Fragment {
                     intent.putExtra("longtitude",longtitude);
                     intent.putExtra("username",sharedPreferences.getString("username","没有绑定"));
                     intent.putExtra("openid",sharedPreferences.getString("openid","没有绑定"));
-                }else{//如果用户没有登录
-                    Util.toastShort(context,"你暂未登录，请先登录");
-                    intent = new Intent(context, LoginActivity.class);
+                    startActivity(intent);
                 }
-                startActivity(intent);
             }
         });//标题栏点击事件
         mMapView = (MapView)view.findViewById(R.id.bmapView);

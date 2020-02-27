@@ -7,6 +7,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -14,9 +16,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
+import com.lanling.bean.UploadData;
 import com.lanling.fragment.WodeFragment;
 import com.lanling.fragment.ZhuyaoFragment;
+import com.lanling.util.UploadDataUtil;
 import com.lanling.util.Util;
+
+import org.litepal.LitePal;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +52,27 @@ public class MainActivity extends AppCompatActivity implements ZhuyaoFragment.On
             initPermission();
         }else {
             initFragments();
+        }
+        //判断本地是否没有上传的数据，如果有的话，那就询问是否上传
+        final List<UploadData> notUploadDatas = LitePal.where("uploadOrNot = ?", "0").find(UploadData.class);
+        if (notUploadDatas.size() != 0){
+            //弹出框询问是否删除
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("上传")
+                    .setMessage("本地还有 "+notUploadDatas.size()+" 条数据未上传，是否上传？")
+                    .setIcon(R.mipmap.app_icon)
+                    .setPositiveButton("上传", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            UploadDataUtil.uploadDatas("http://www.zhengzhoudaxue.cn:8080/SaveData/uploaddata",notUploadDatas,MainActivity.this);
+                        }
+                    })
+                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    }).create();
+            alertDialog.show();
         }
     }
 
@@ -132,13 +160,4 @@ public class MainActivity extends AppCompatActivity implements ZhuyaoFragment.On
             }
         });
     }//初始化所有Fragment
-
-    //判断用户是否开启GPS和网络
-    private boolean isGpsAndIntenet(){
-        return false;
-    }
-
-    //判断本地是否存储有数据
-
-
 }
