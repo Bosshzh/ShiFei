@@ -38,7 +38,12 @@ public class LocalDataActivity extends AppCompatActivity {
             }
             @Override
             public void rightClick() {
-                Util.toastShort(LocalDataActivity.this,"你点击了一键上传按钮");
+                List<UploadData> notUploadDatas = LitePal.select().where("uploadOrNot=?","false").find(UploadData.class);
+                if (notUploadDatas.size() == 0 || notUploadDatas == null){
+                    Util.toastShort(LocalDataActivity.this,"本地数据都已采集过");
+                }else{//上传数据
+
+                }
             }
         });
 
@@ -98,9 +103,14 @@ public class LocalDataActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Intent intent = getIntent();
-        int position = intent.getIntExtra("position",-1);
-        if(position != -1){
-            localDataAdapter.removeData(position);
+        int positionNotify = intent.getIntExtra("positionNotify",-1);
+        int positionRemove = intent.getIntExtra("positionRemove",-1);
+        if(positionRemove != -1){
+            localDataAdapter.removeData(positionRemove);
+        }
+        if (positionNotify != -1){
+//            localDataAdapter.notifyItemChanged(positionNotify);
+            localDataAdapter.notifyItem(positionNotify);
         }
     }
 }

@@ -1,28 +1,20 @@
 package com.lanling.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.lanling.bean.UploadData;
 import com.lanling.util.UploadDataUtil;
 import com.lanling.util.Util;
 import com.lanling.view.TitlebarView;
-
 import org.litepal.LitePal;
-import org.litepal.crud.LitePalSupport;
-
-import java.io.File;
 
 public class LocalDataItemActivity extends AppCompatActivity {
 
@@ -58,11 +50,9 @@ public class LocalDataItemActivity extends AppCompatActivity {
     private TextView jiaoshui1;//第一次浇水
     private TextView jiaoshui2;//第二次浇水
     private TextView jiaoshui3;//第三次浇水
-
     //其它
     private TextView localdataitem_dayao_textview;//是否打药
     private TextView localdataitem_chucao_textview;//是否除草
-
     //土地景观图
     private LinearLayout localdataitem_image1_linearlayout;//土地景观图
     private LinearLayout localdataitem_image2_linearlayout;//现场访谈图
@@ -81,14 +71,20 @@ public class LocalDataItemActivity extends AppCompatActivity {
             @Override
             public void leftClick() {//点击标题栏左侧返回按钮
                 Intent intent = new Intent(LocalDataItemActivity.this,LocalDataActivity.class);
+                intent.putExtra("positionNotify",position);
                 startActivity(intent);
             }
-
             @Override
             public void rightClick() {//点击标题栏右侧上传按钮
-                UploadDataUtil.upoload("http://www.zhengzhoudaxue.cn:8080/SaveData/uploaddata",uploadData);
+                if (uploadData.isUpload()){
+                    Util.toastShort(LocalDataItemActivity.this,"该数据已经上传");
+                }else{
+                    UploadDataUtil.upoload("http://www.zhengzhoudaxue.cn:8080/SaveData/uploaddata",uploadData,LocalDataItemActivity.this);
+                }
             }
         });
+
+
 
         //位置
         localdataitem_address_textview = findViewById(R.id.localdataitem_address_textview);//具体位置
@@ -143,7 +139,7 @@ public class LocalDataItemActivity extends AppCompatActivity {
         gongyefeiqiwu.setText("工业废弃物："+uploadData.getGongyefeiqiwu());
         shenghuolaji.setText("生活垃圾："+uploadData.getShenghuolaji());
         nigou.setText("泥垢："+uploadData.getNigou());
-        localdataitem_shifeicishu_textview.setText("施肥次数："+uploadData.getManure_sort());
+        localdataitem_shifeicishu_textview.setText("施肥次数："+uploadData.getManure_number());
         shifei1.setText("第一次时间:"+uploadData.getManureDate_first()+"\t施肥量:"+uploadData.getManureNumber_first()+"公斤/亩");
         shifei2.setText("第二次时间:"+uploadData.getManureDate_second()+"\t施肥量:"+uploadData.getManureNumber_second()+"公斤/亩");
         shifei3.setText("第三次时间:"+uploadData.getManureDate_third()+"\t施肥量:"+uploadData.getManureNumber_third()+"公斤/亩");
@@ -182,12 +178,20 @@ public class LocalDataItemActivity extends AppCompatActivity {
                if(LitePal.deleteAll(UploadData.class,"uploadid=?",""+uploadData.getUploadid()) != 0){
                    Util.toastShort(LocalDataItemActivity.this,"删除成功");
                    Intent intent1 = new Intent(LocalDataItemActivity.this,LocalDataActivity.class);
-                   intent1.putExtra("position",position);
+                   intent1.putExtra("positionRemove",position);
                    startActivity(intent1);
                }else{
                    Util.toastShort(LocalDataItemActivity.this,"删除失败");
                }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(LocalDataItemActivity.this,LocalDataActivity.class);
+        intent.putExtra("positionNotify",position);
+        startActivity(intent);
     }
 }

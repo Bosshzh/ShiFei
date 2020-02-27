@@ -15890,4 +15890,7 @@ public final class R {
      */
     public static final int pickerview_wheelview_textSize=5;
   }
+  public static final class xml {
+    public static final int network_security_config=0x7f100000;
+  }
 }

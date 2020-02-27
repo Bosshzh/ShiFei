@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UploadData extends LitePalSupport implements Serializable {
@@ -28,7 +29,6 @@ public class UploadData extends LitePalSupport implements Serializable {
     private String crop_sort = "小麦";//作物种类
     private String land_sort = "水田";//土地类型
     private int harvest;//产量
-
 
     //肥料的种类
     private String manure_sort = "不施肥";//肥料的种类
@@ -67,12 +67,13 @@ public class UploadData extends LitePalSupport implements Serializable {
     private String username;//邮箱账号
     private String openid;//openid
     private boolean uploadOrNot;//用户是否已经上传数据
+    private SimpleDateFormat simple = null;
 
-    public boolean isUploadOrNot() {
+    public boolean isUpload() {
         return uploadOrNot;
     }
 
-    public void setUploadOrNot(boolean uploadOrNot) {
+    public void setUpload(boolean uploadOrNot) {
         this.uploadOrNot = uploadOrNot;
     }
 
@@ -82,6 +83,10 @@ public class UploadData extends LitePalSupport implements Serializable {
 
     public void setOpenid(String openid) {
         this.openid = openid;
+    }
+
+    public UploadData() {
+        simple = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     }
 
     public void clearManureSort(){
@@ -204,9 +209,6 @@ public class UploadData extends LitePalSupport implements Serializable {
             this.weed = "不除草";
         }
     }
-    public Date getDate() {
-        return date;
-    }
     public void setDate(Date date) {
         this.date = date;
     }
@@ -327,20 +329,11 @@ public class UploadData extends LitePalSupport implements Serializable {
     public void setManureNumber_third(int manureNumber_third) {
         this.manureNumber_third = manureNumber_third;
     }
-    public Date getManureDate_first() {
-        return manureDate_first;
-    }
     public void setManureDate_first(Date manureDate_first) {
         this.manureDate_first = manureDate_first;
     }
-    public Date getManureDate_second() {
-        return manureDate_second;
-    }
     public void setManureDate_second(Date manureDate_second) {
         this.manureDate_second = manureDate_second;
-    }
-    public Date getManureDate_third() {
-        return manureDate_third;
     }
     public void setManureDate_third(Date manureDate_third) {
         this.manureDate_third = manureDate_third;
@@ -363,24 +356,52 @@ public class UploadData extends LitePalSupport implements Serializable {
     public void setWaterNumber_third(int waterNumber_third) {
         this.waterNumber_third = waterNumber_third;
     }
-    public Date getWaterDate_first() {
-        return waterDate_first;
-    }
     public void setWaterDate_first(Date waterDate_first) {
         this.waterDate_first = waterDate_first;
-    }
-    public Date getWaterDate_second() {
-        return waterDate_second;
     }
     public void setWaterDate_second(Date waterDate_second) {
         this.waterDate_second = waterDate_second;
     }
-    public Date getWaterDate_third() {
-        return waterDate_third;
-    }
     public void setWaterDate_third(Date waterDate_third) {
         this.waterDate_third = waterDate_third;
     }
+
+    public Date getWaterDate_first() {
+        return waterDate_first;
+    }
+
+    public Date getWaterDate_second() {
+        return waterDate_second;
+    }
+
+    public Date getWaterDate_third() {
+        return waterDate_third;
+    }
+
+    public Date getManureDate_first() {
+        return manureDate_first;
+    }
+
+    public Date getManureDate_second() {
+        return manureDate_second;
+    }
+
+    public Date getManureDate_third() {
+        return manureDate_third;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public SimpleDateFormat getSimple() {
+        return simple;
+    }
+
+    public void setSimple(SimpleDateFormat simple) {
+        this.simple = simple;
+    }
+
     public static String compressImage(String filePath, File outputFile, int quality)  {
         Bitmap bm = getSmallBitmap(filePath);//获取一定尺寸的图片
         try {

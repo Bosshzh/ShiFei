@@ -51,6 +51,10 @@ public class LocalDataAdapter extends RecyclerView.Adapter<LocalDataAdapter.View
         notifyItemRemoved(position);
     }
 
+    public void notifyItem(int position){
+        notifyItemChanged(position);
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
@@ -62,7 +66,7 @@ public class LocalDataAdapter extends RecyclerView.Adapter<LocalDataAdapter.View
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         UploadData uploadData = uploadDatas.get(position);
-        if (uploadData.isUploadOrNot()){//如果数据已经上传，显示的是绿色
+        if (uploadData.isUpload()){//如果数据已经上传，显示的是绿色
             holder.title.setTextColor(Color.parseColor("#00CD00"));
             holder.time.setTextColor(Color.parseColor("#00CD00"));
         }else{//如果数据还没有上传，那显示数据是红色

@@ -2473,3 +2473,4 @@ int styleable pickerview_wheelview_lineSpacingMultiplier 2
 int styleable pickerview_wheelview_textColorCenter 3
 int styleable pickerview_wheelview_textColorOut 4
 int styleable pickerview_wheelview_textSize 5
+int xml network_security_config 0x7f100000
