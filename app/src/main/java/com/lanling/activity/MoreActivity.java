@@ -182,7 +182,7 @@ public class MoreActivity extends AppCompatActivity {
         params.putString(QQShare.SHARE_TO_QQ_TITLE, "【土壤施肥信息】");// 标题
         params.putString(QQShare.SHARE_TO_QQ_SUMMARY, "下载【土壤施肥信息采集app】");// 摘要
         params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,"http://www.zhengzhoudaxue.cn:8080/SaveData/shifei.apk");// 内容地址
-        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,"http://www.zhengzhoudaxue.cn:8080/SaveData/images/app_icon.png");// 网络图片地址　　params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "应用名称");// 应用名称
+        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,"http://www.zhengzhoudaxue.cn:8080/images/photo/app_icon.png");// 网络图片地址　　params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "应用名称");// 应用名称
         params.putString(QQShare.SHARE_TO_QQ_EXT_INT, "其它附加功能");
         mTencent.shareToQQ(MoreActivity.this, params, baseUiListener);
     }
