@@ -200,7 +200,7 @@ ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManife
 		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:54:13-37
 	android:name
 		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:52:13-58
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent1109968603
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent101828522
 ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:55:13-62:29
 action#android.intent.action.VIEW
 ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:56:17-69
@@ -215,9 +215,9 @@ ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManife
 	android:name
 		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:59:27-75
 data
-ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:61:17-60
+ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:60:17-59
 	android:scheme
-		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:61:23-57
+		ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:60:23-56
 activity#com.tencent.connect.common.AssistActivity
 ADDED from D:\project\android_studio\workspace\ShiFei\app\src\main\AndroidManifest.xml:64:9-68:75
 	android:screenOrientation

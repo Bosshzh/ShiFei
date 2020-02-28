@@ -194,13 +194,13 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                     try {
                                         String result = Util.sendMessage("http://www.zhengzhoudaxue.cn:8080/SaveData/loginqq",params,"utf-8");
-                                        if ("3".equals(result)) {//第三方登录失败
-                                            mHandler.sendEmptyMessage(3);
-                                        }else{//第三方登录成功
+                                        if ("0".equals(result)) {//第三方登录成功
                                             editor.putString("openid",mTencent.getOpenId())
-                                                    .putString("photoqq",result.split("&")[1])
+                                                    .putString("photoqq",oo.getString("figureurl_2"))
                                                     .putString("name",oo.getString("nickname")).apply();
                                             mHandler.sendEmptyMessage(0);
+                                        }else{//第三方登录失败
+                                            mHandler.sendEmptyMessage(3);
                                         }
                                     } catch (IOException e) {
                                         e.printStackTrace();

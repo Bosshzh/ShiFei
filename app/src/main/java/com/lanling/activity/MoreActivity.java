@@ -96,12 +96,15 @@ public class MoreActivity extends AppCompatActivity {
         xiugai.setOnClickView(new PerSelectView.OnClickView() {
             @Override
             public void onclick() {
-                if(Util.isLogin(MoreActivity.this) == 0){
+                int logintype = Util.isLogin(MoreActivity.this);
+                if(logintype == 0){
                     //如果没有登录的话
                     Util.toastShort(MoreActivity.this,"您暂时没有登录，请先登录");
                     Intent intent = new Intent(MoreActivity.this,LoginActivity.class);
                     startActivity(intent);
-                }else{
+                }else if (logintype == 1){//如果是第三方登录的话
+                    Util.toastShort(MoreActivity.this,"第三方登录不需要修改资料");
+                }else{//如果是账号密码登录的话
                     Intent intent = new Intent(MoreActivity.this,WebViewActivity.class);
                     intent.putExtra("title", "修改资料");
                     intent.putExtra("url", "http://www.zhengzhoudaxue.cn:8080/SaveData/xiugai.jsp");
@@ -207,5 +210,4 @@ public class MoreActivity extends AppCompatActivity {
             return false;
         }
     }
-
 }

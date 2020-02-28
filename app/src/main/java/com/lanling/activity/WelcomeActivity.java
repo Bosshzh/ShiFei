@@ -33,7 +33,7 @@ public class WelcomeActivity extends Activity {
         SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         //在欢迎界面的时候判断是否登录
-        if (Util.isLogin(WelcomeActivity.this) == 1){
+        if (Util.isLogin(WelcomeActivity.this) == 2){
             //如果是第三方登录的话
             final String openid = sharedPreferences.getString("openid","0");
             //开启一个新的线程获取头像信息
@@ -47,35 +47,17 @@ public class WelcomeActivity extends Activity {
                         String result = Util.sendMessage("http://www.zhengzhoudaxue.cn:8080/SaveData/photo",params,"utf-8");
                         if (!"0".equals(result)){
                             editor.putString("photoqq","http://www.zhengzhoudaxue.cn:8080"+result).apply();//存入头像信息
+                            handler.sendEmptyMessage(0);
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             }).start();
-        }else if (Util.isLogin(WelcomeActivity.this) == 2){
-            //如果是账号密码登录的话
-            final String username = sharedPreferences.getString("username","0");
-            //开启一个新的线程获取头像信息
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    final Map<String,String> params = new HashMap<>();
-                    params.put("type","2");
-                    params.put("username",username);
-                    String result = null;
-                    try {
-                        result = Util.sendMessage("http://www.zhengzhoudaxue.cn:8080/SaveData/photo",params,"utf-8");
-                        if (!"0".equals(result)){
-                            editor.putString("photouser","http://www.zhengzhoudaxue.cn:8080"+result).apply();//存入头像信息
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }).start();
+        }else{
+            handler.sendEmptyMessageDelayed(0,1000);
         }
-        handler.sendEmptyMessageDelayed(0,1500);
+
     }
 
     private Handler handler = new Handler() {

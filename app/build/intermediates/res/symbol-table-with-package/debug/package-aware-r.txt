@@ -1301,7 +1301,6 @@ layout select_dialog_singlechoice_material
 layout shifei_item
 layout support_simple_spinner_dropdown_item
 mipmap app_icon
-mipmap app_icon_round1
 mipmap bendi
 mipmap daiding
 mipmap denglu
